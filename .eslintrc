@@ -1,0 +1,22 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "indent": ["error", tab],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "no-tabs": "off",
+        "react/jsx-indent": [2, 'tab'],
+        "import/no-unresolved": [2, {"caseSensitive": false}],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "no-console": ["error", allow: ["log"]],
+        "react/jsx-indent-props": [2, 'tab'],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true}]
+    },
+    "globals": {
+        "document": false,
+        "describe": false,
+        "it": false,
+        "beforeEach": true,
+        "expect": true,
+        "window": true
+    }
+}
