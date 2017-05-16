@@ -1,6 +1,6 @@
 const { FirstReverse } = require('../problems/problem001');
 
-describe('myTests', () => {
+describe('First Reverse', () => {
 	it('should return an empty string, if no argument given', () => {
 		expect(FirstReverse()).toBe('');
 	});
