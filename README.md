@@ -1,2 +1,2 @@
 # ByteBites
-All Problems Published on Coderbyte.com, With Solutions
+All Problems Published on coderbyte.com, with solutions
