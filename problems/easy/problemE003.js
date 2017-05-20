@@ -9,7 +9,7 @@ module.exports = {
 	name: ['LongestWord'],
 	number: 3,
 	level: 'easy',
-	methods: ['trim()', 'replace()' 'split()', 'sort()', 'pop()'],
+	methods: ['trim()', 'replace()', 'split()', 'sort()', 'pop()'],
 	concepts: ['chaining methods', 'regular expressions', 'const', 'sorting'],
 
 	LongestWord(sen) {
