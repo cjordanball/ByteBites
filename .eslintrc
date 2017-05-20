@@ -10,7 +10,8 @@
         "no-console": ["error", allow: ["log"]],
         "react/jsx-indent-props": [2, 'tab'],
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true}],
-        "comma-dangle": ["error", "never"]
+        "comma-dangle": ["error", "never"],
+        "no-restricted-syntax": ["error"]
     },
     "globals": {
         "document": false,
