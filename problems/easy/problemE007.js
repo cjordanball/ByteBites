@@ -19,6 +19,6 @@ module.exports = {
 		// make an array of the regex descriptions that cannot exist in the input
 		const testArray = [/^\w/, /\w$/, /[^+]\w]/, /\w[^+]/];
 		// check to see if any of the conditions are violated
-		return testArray.every(val => !val.test(str)) ? 'true' : 'false';
+		return testArray.some(val => val.test(str)) ? 'false' : 'true';
 	}
 };
