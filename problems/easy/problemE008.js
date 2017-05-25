@@ -17,8 +17,8 @@ module.exports = {
 	name: ['CheckNums'],
 	number: 8,
 	level: 'easy',
-	methods: ['replace()', 'toUpperCase()'],
-	concepts: ['regular expressions'],
+	methods: [],
+	concepts: ['ternary operator'],
 
 
 	CheckNums(num1, num2) {
