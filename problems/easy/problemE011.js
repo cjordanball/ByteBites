@@ -11,15 +11,16 @@ familiar with their use, this problem should inspire you to take a few hours and
 yourself with them.
 */
 
+const name = 'ABCheck';
+const number = 11;
+const level = 'easy';
+const methods = ['test()'];
+const concepts = ['regular expressions'];
+
+const ABCheck = (str) => {
+	return /(a...b|b...a)/.test(str) ? 'true' : 'false';
+};
 
 module.exports = {
-	name: ['ABCheck'],
-	number: 11,
-	level: 'easy',
-	methods: ['test()'],
-	concepts: ['regular expressions'],
-
-	ABCheck(str) {
-		return /(a...b|b...a)/.test(str) ? 'true' : 'false';
-	}
+	ABCheck
 };

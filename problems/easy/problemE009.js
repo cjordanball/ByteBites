@@ -9,18 +9,19 @@ Like most computer languages,  Javascript provides an operator "%" to give us th
 of a divsion, which makes this a pretty simple problem.
 */
 
-module.exports = {
-	name: ['TimeConvert'],
-	number: 9,
-	level: 'easy',
-	methods: ['floor', 'toString'],
-	concepts: ['remainder operator', 'template strings'],
+const name = 'TimeConvert';
+const number = 9;
+const level = 'easy';
+const methods = ['floor', 'toString'];
+const concepts = ['remainder operator', 'template strings'];
 
-
-	TimeConvert(num) {
-		if (num < 0) {
-			return 'Cannot accept negative numbers.';
-		}
-		return `${Math.floor(num / 60).toString()}:${(num % 60).toString()}`;
+const TimeConvert = (num) => {
+	if (num < 0) {
+		return 'Cannot accept negative numbers.';
 	}
+	return `${Math.floor(num / 60).toString()}:${(num % 60).toString()}`;
+};
+
+module.exports = {
+	TimeConvert
 };

@@ -23,31 +23,33 @@ make certain that the base case is properly set up, or an endless loop may be se
 an immediate stack overflow error.
 */
 
+const name = 'FirstFactorial';
+const number = 1;
+const level = 'easy';
+const methods = [];
+const concepts = ['for-loop', '*= operator', 'let', 'recursion', 'if statement'];
+
+// Iterative solution.  Very straightforward loop.
+const FirstFactorial = (num) => {
+	let result = 1;
+	for (let i = 1; i <= num; i++) {
+		result *= i;
+	}
+	return result;
+};
+
+// One somewhat advanced note - because the recursion is occuring in the module.exports
+// object, it cannot be accessed with 'this'.
+const FirstFactorialRec = (num) => {
+	// set up the floor case of num = 1
+	if (num === 1) {
+		return 1;
+	}
+	// recast the problem for any other positive integer num
+	return num * module.exports.FirstFactorialRec(num - 1);
+};
 
 module.exports = {
-	name: ['FirstFactorial'],
-	number: 1,
-	level: 'easy',
-	methods: [],
-	concepts: ['for-loop', '*= operator', 'let', 'recursion', 'if statement'],
-
-	// Iterative solution.  Very straightforward loop.
-	FirstFactorial(num) {
-		let result = 1;
-		for (let i = 1; i <= num; i++) {
-			result *= i;
-		}
-		return result;
-	},
-
-	// One somewhat advanced note - because the recursion is occuring in the module.exports
-	// object, it cannot be accessed with 'this'.
-	FirstFactorialRec(num) {
-		// set up the floor case of num = 1
-		if (num === 1) {
-			return 1;
-		}
-		// recast the problem for any other positive integer num
-		return num * module.exports.FirstFactorialRec(num - 1);
-	}
+	FirstFactorial,
+	FirstFactorialRec
 };

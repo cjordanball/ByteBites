@@ -13,20 +13,19 @@ sequence, with the output of the nth method becoming the parameter of the (n-1)t
 this approach allows me to write tests, then solve the problem backward, testing the smallest part
 first, then working out to the ultimate goal.
 */
-module.exports = {
-	name: ['LetterChanges'],
-	number: 4,
-	level: 'easy',
-	methods: ['trim()', 'toLowerCase()', 'test()', 'fromCharCode()', 'charCodeAt()', 'replace()', 'toUpperCase()'],
-	concepts: ['of operator', 'modulo operator', 'regular expressions', 'replace() with callback'],
 
+const name = 'LetterChanges';
+const number = 4;
+const level = 'easy';
+const method = ['trim()', 'toLowerCase()', 'test()', 'fromCharCode()', 'charCodeAt()', 'replace()', 'toUpperCase()'];
+const concepts = ['of operator', 'modulo operator', 'regular expressions', 'replace() with callback'];
+let helpers;
 
-	LetterChanges(str) {
-		return module.exports.capitalizer(module.exports.shifter(module.exports.prepare(str)));
-	},
+const LetterChanges = (str) => {
+	return helpers.capitalizer(helpers.shifter(helpers.prepare(str)));
+};
 
-// -----------------------Helper Functions---------------------------------
-
+helpers = {
 	// prepare() takes a string, whacks off any front and trailing whitespace, and puts everything
 	// in lowercase.
 	prepare(str) {
@@ -43,8 +42,13 @@ module.exports = {
 		return newString;
 	},
 
-	// capitalizer() takes a string, reurns the string with all vowels capitalized
+	// capitalizer() takes a string, returns the string with all vowels capitalized
 	capitalizer(str) {
 		return str.replace(/[aeiou]/g, char => char.toUpperCase());
 	}
+};
+
+module.exports = {
+	LetterChanges,
+	helpers
 };
