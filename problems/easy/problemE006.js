@@ -10,15 +10,17 @@ uses regular expressions, which can be terse in the extreme, but can operate lik
 learn more about them, I suggest
 */
 
+const name = 'LetterCapitalize';
+const number = 6;
+const level = 'easy';
+const methods = ['replace()', 'toUpperCase()'];
+const concepts = ['regular expressions'];
+
+
+const LetterCapitalize = (str) => {
+	return str.replace(/\b\w/g, char => char.toUpperCase());
+};
+
 module.exports = {
-	name: ['LetterCapitalize'],
-	number: 6,
-	level: 'easy',
-	methods: ['replace()', 'toUpperCase()'],
-	concepts: ['regular expressions'],
-
-
-	LetterCapitalize(str) {
-		return str.replace(/\b\w/g, char => char.toUpperCase());
-	}
+	LetterCapitalize
 };

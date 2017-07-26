@@ -11,24 +11,26 @@ above is no exception. Do spaces count?, do cases have to match?, etc.  Anyway, 
 is a solution that is case-insensitive, but space-sensitive.
 */
 
-module.exports = {
-	name: ['Palindrome'],
-	number: 15,
-	level: 'easy',
-	methods: ['toLowerCase()', 'charAt()'],
-	concepts: ['for loop'],
+const name = 'Palindrome';
+const number = 15;
+const level = 'easy';
+const methods = ['toLowerCase()', 'charAt()'];
+const concepts = ['for loop'];
 
-	Palindrome(str) {
-		const lowerCaseString = str.toLowerCase();
-		const len = str.length;
-		let rts = '';
+const Palindrome = (str) => {
+	const lowerCaseString = str.toLowerCase();
+	const len = str.length;
+	let rts = '';
 
-		for (let i = len - 1; i >= 0; i--) {
-			// I prefer using the simpler sytax of referring to the character at position i in
-			// a string as "str[i]"; however, the is not supported in all browsers.
-			rts += lowerCaseString.charAt(i);
-		}
-
-		return rts === lowerCaseString;
+	for (let i = len - 1; i >= 0; i--) {
+		// I prefer using the simpler syntax of referring to the character at position i in
+		// a string as "str[i]"; however, the is not supported in all browsers.
+		rts += lowerCaseString.charAt(i);
 	}
+
+	return rts === lowerCaseString;
+};
+
+module.exports = {
+	Palindrome
 };

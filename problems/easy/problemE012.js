@@ -24,15 +24,17 @@ expression with the 'g' flag), returns an array of all matches, but if there are
 returns null, not an empty array!
 */
 
-module.exports = {
-	name: ['VowelCount'],
-	number: 12,
-	level: 'easy',
-	methods: ['match()'],
-	concepts: ['regular expressions'],
+const name = 'VowelCount';
+const number = 12;
+const level = 'easy';
+const methods = ['match()'];
+const concepts = ['regular expressions'];
 
-	VowelCount(str) {
-		const arr = str.match(/[aeiou]/gi);
-		return arr ? arr.length : 0;
-	}
+const VowelCount = (str) => {
+	const arr = str.match(/[aeiou]/gi);
+	return arr ? arr.length : 0;
+};
+
+module.exports = {
+	VowelCount
 };

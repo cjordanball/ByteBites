@@ -11,14 +11,16 @@ a lot of room for further investigation, particularly in the full use of the sor
 which can take a sorting function as a parameter.
 */
 
-module.exports = {
-	name: ['AlphabetSoup'],
-	number: 10,
-	level: 'easy',
-	methods: ['split', 'sort', 'join'],
-	concepts: ['chaining methods'],
+const name = 'AlphabetSoup';
+const number = 10;
+const level = 'easy';
+const methods = ['split', 'sort', 'join'];
+const concepts = ['chaining methods'];
 
-	AlphabetSoup(str) {
-		return str.split('').sort().join('');
-	}
+const AlphabetSoup = (str) => {
+	return str.split('').sort().join('');
+};
+
+module.exports = {
+	AlphabetSoup
 };

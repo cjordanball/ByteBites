@@ -11,26 +11,27 @@ substring. If the input string contains only a single character, your program sh
 the string -1.
 */
 
+const name = ['StringPeriods'];
+const number = 76;
+const level = 'easy';
+const methods = ['Math.max', 'Math.trunc', 'Math.sqrt', '(string).slice', '(string).repeat'];
+const concepts = ['for-loop', 'if-statement'];
 
-module.exports = {
-	name: ['StringPeriods'],
-	number: 76,
-	level: 'easy',
-	methods: ['Math.max', 'Math.trunc', 'Math.sqrt', '(string).slice', '(string).repeat'],
-	concepts: ['for-loop', 'if-statement'],
-
-	StringPeriods(str) {
-		// we will use only lengths of substrings that divide evenly into str
-		const len = str.length;
-		const pivot = Math.max(Math.trunc(Math.sqrt(len)), len);
-		for (let i = 2; i <= pivot; i++) {
-			if (len % i === 0) {
-				const block = str.slice(0, len / i);
-				if (block.repeat(i) === str) {
-					return block;
-				}
+const StringPeriods = (str) => {
+	// we will use only lengths of substrings that divide evenly into str
+	const len = str.length;
+	const pivot = Math.max(Math.trunc(Math.sqrt(len)), len);
+	for (let i = 2; i <= pivot; i++) {
+		if (len % i === 0) {
+			const block = str.slice(0, len / i);
+			if (block.repeat(i) === str) {
+				return block;
 			}
 		}
-		return -1;
-	},
+	}
+	return -1;
+};
+
+module.exports = {
+	StringPeriods
 };
