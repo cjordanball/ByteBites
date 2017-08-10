@@ -1,6 +1,6 @@
 const { CountingMinutes } = require('../problems/easy/problemE021');
 
-describe('DivisionStringified', () => {
+describe('CountingMinutes', () => {
 	it('return the time difference in minutes', () => {
 		expect(CountingMinutes('3:37am-5:00am')).toBe(83);
 	});
