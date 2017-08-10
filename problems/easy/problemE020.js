@@ -15,11 +15,11 @@ separate out the remainder, then adding it back in.
 const name = 'DivisionStringified';
 const number = 20;
 const level = 'easy';
-const methods = [];
-const concepts = [];
+const methods = ['trunc()', 'toString()', 'split()', 'splice()', 'join()'];
+const concepts = ['for loop'];
 
 const DivisionStringified = (num1, num2) => {
-	let rawNumberString = Math.trunc( num1 / num2).toString();
+	let rawNumberString = Math.trunc(num1 / num2).toString();
 	const len = rawNumberString.length;
 	if (len > 3) {
 		const rawNumberArray = rawNumberString.split('');

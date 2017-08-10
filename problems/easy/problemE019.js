@@ -35,7 +35,7 @@ const name = 'SecondGreatLow';
 const number = 19;
 const level = 'easy';
 const methods = [];
-const concepts = [];
+const concepts = ['template literals', 'for loop', 'objects', '||', '&&'];
 
 const SecondGreatLow = (arr) => {
 	const dataObject = {
