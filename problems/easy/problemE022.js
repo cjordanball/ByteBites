@@ -8,8 +8,8 @@ positive integers, and will not contain more than one mode.
 const name = 'MeanMode';
 const number = 22;
 const level = 'easy';
-const methods = [];
-const concepts = [];
+const methods = ['reduce()', 'toString()', 'parseInt()'];
+const concepts = ['iterating over an object', 'for in loop', 'for loop', 'dynamic object properties'];
 let helpers;
 
 const MeanMode = (arr) => {
