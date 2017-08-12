@@ -22,7 +22,6 @@ const number = 23;
 const level = 'easy';
 const methods = ['toString()', 'split()', 'map()', 'parseInt()', 'splice()', 'join()', 'replace()'];
 const concepts = ['array iterators', 'while loops', 'modulus operator', 'regular expressions'];
-let helpers;
 
 const DashInsert1 = (num) => {
 	const numStr = num.toString();
