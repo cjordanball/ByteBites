@@ -19,7 +19,7 @@ the array.
 const name = 'ThirdGreatest';
 const number = 26;
 const level = 'easy';
-const methods = [];
+const methods = ['sort()', 'filter()', 'pop()', 'splice()', 'slice()', 'findIndex()'];
 const concepts = [];
 let helpers;
 
