@@ -1,16 +1,11 @@
-const { MultiplicativePersistence, helpers: { arrayPrep } } = require('../problems/easy/problemE029');
+const { ChangingSequence } = require('../problems/easy/problemE030');
 
-describe('MultiplicativePersistence', () => {
-	describe('ArrayPrep', () => {
-		it('returns a summation of integers in a number', () => {
-			expect(arrayPrep(134)).toBe(12);
-			expect(arrayPrep(654321)).toBe(720);
-		});
-	});
-	it('should return the correct answer', () => {
-		expect(MultiplicativePersistence(949584935294)).toBe(2);
+describe('ChangingSequence', () => {
+	it('should correctly handle one way sequences', () => {
+		expect(ChangingSequence([1, 5, 6, 10, 12, 15])).toBe(-1);
+		expect(ChangingSequence([100, 95, 90, 85, 80])).toBe(-1);
 	});
 	it('returns 0 as the answer for 1', () => {
-		expect(MultiplicativePersistence(1)).toBe(0);
+		expect(ChangingSequence([10, 9, 8, 7, 4, 5])).toBe(4);
 	});
 });
