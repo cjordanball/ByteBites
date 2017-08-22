@@ -1,47 +1,43 @@
 /*
-Using the JavaScript language, have the function ChangingSequence(arr) take the array
-of numbers stored in arr and return the index at which the numbers stop increasing and
-begin decreasing or stop decreasing and begin increasing. For example: if arr
-is [1, 2, 4, 6, 4, 3, 1] then your program should return 3 because 6 is the last point
-in the array where the numbers were increasing and the next number begins a decreasing
-sequence. The array will contain at least 3 numbers and it may contains only a single
-sequence, increasing or decreasing. If there is only a single sequence in the array,
-then your program should return -1. Indexing should begin with 0.
-*/
+Using the JavaScript language, create a function OffLineMinimum(strArr) that takes an array of
+integer strings ranging from ranging from 1...n and the letter "E" and returns the correct subset
+based on the following rules. The input will be in the following format: ["I","I","E","I",...,
+"E",...,"I"] where the I's stand for integers and the E means take out the smallest integer
+currently in the whole set. When finished, your program should return that new set with integers
+separated by commas. For example: if strArr is ["5","4","6","E","1","7","E","E","3","2"] then your
+program should return 4,1,5.
+ */
 
 /*
-Note: The code below makes the assumption that there is a difference between the first
-two numbers, so there is an increasing or decreasing sequence. Obviously, in the real
-world validation should be in place to handle that not being the case.
+The problem description is not particularly clear, but is illuminated by the example given.
+ */
 
-The problem is a little vague on the input it might present. For example, it doesn't
-state whether there might be multiple sequences; for example, up, then down, then up more.
-The findIndex method works well for our purposes here, because it returns -1 if it finds
-no matching index.
-*/
-
-const name = 'ChangingSequence';
+const name = 'OffLineMinimum';
 const number = 30;
 const level = 'easy';
-const methods = [];
-const concepts = ['while loop'];
-let helpers;
+const methods = ['push()', 'min()', 'findIndex', 'Number()', 'splice()'];
+const concepts = ['while loop', 'ternary expression'];
 
-const ChangingSequence = (arr) => {
-	// first, determine if the initial sequence is increasing or decreasing
-	const type = arr[1] - arr[0] > 0 ? 'increasing' : 'decreasing';
-	const maxInd = arr.length - 1;
-
-	if (type === 'increasing') {
-		return arr.findIndex((val, ind) => (
-			val > arr[ind + 1] && val < maxInd
-	));
+const OffLineMinimum = (arr) => {
+	const resArr = [];
+	const holdingArr = [];
+	let placeCount = 0;
+	while (placeCount < arr.length) {
+		if (arr[placeCount] !== 'E') {
+			holdingArr.push(arr[placeCount]);
+		} else {
+			const minNum = holdingArr.length ? Math.min(...holdingArr) : null;
+			const minNumIndex = holdingArr.findIndex(val => Number(val) === minNum);
+			holdingArr.splice(minNumIndex, 1);
+			if (minNum) {
+				resArr.push(minNum);
+			}
+		}
+		placeCount += 1;
 	}
-	return arr.findIndex((val, ind) => (
-		val < arr[ind + 1] && val < maxInd
-	));
+	return resArr.join(',');
 };
 
 module.exports = {
-	ChangingSequence
+	OffLineMinimum
 };

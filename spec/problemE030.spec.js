@@ -1,18 +1,10 @@
+const { OffLineMinimum } = require('../problems/easy/problemE030');
 
-
-const { MultiplicativePersistence, helpers: { arrayPrep } } = require('../problems/easy/problemE029');
-
-describe('MultiplicativePersistence', () => {
-	describe('ArrayPrep', () => {
-		it('returns a summation of integers in a number', () => {
-			expect(arrayPrep(134)).toBe(12);
-			expect(arrayPrep(654321)).toBe(720);
-		});
+describe('OffLineMinimum', () => {
+	it('should correctly handle an array of numbers and Es', () => {
+		expect(OffLineMinimum(["5","4","6","E","1","7","E","E","3","2"])).toBe('4,1,5');
 	});
-	it('should return the correct answer', () => {
-		expect(MultiplicativePersistence(949584935294)).toBe(2);
-	});
-	it('returns 0 as the answer for 1', () => {
-		expect(MultiplicativePersistence(1)).toBe(0);
+	it('should handle an initial E', () => {
+		expect(OffLineMinimum(["E","1", "E","12","15","23","E","2","33","E"])).toBe('1,12,2');
 	});
 });
