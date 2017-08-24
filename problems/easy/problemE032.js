@@ -19,8 +19,8 @@ are set from min, max), then this is a pretty simple problem.
 const name = 'OverlappingRanges';
 const number = 32;
 const level = 'easy';
-const methods = [];
-const concepts = [];
+const methods = ['max()', 'min()'];
+const concepts = ['ternary statement'];
 
 const OverlappingRanges = (arr) => {
 	const target = arr[4];
