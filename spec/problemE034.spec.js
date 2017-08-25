@@ -20,6 +20,6 @@ describe('HammingDistance1', () => {
 		it('should determine the number of differing letters', () => {
 			expect(HammingDistance2(['coder', 'codec'])).toBe(1);
 			expect(HammingDistance2(['jordan', 'boring'])).toBe(4);
-		})
-	})
+		});
+	});
 });

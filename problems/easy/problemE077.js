@@ -12,7 +12,7 @@ the string -1.
 */
 
 const name = ['StringPeriods'];
-const number = 76;
+const number = 77;
 const level = 'easy';
 const methods = ['Math.max', 'Math.trunc', 'Math.sqrt', '(string).slice', '(string).repeat'];
 const concepts = ['for-loop', 'if-statement'];
