@@ -35,10 +35,10 @@ value, and we are going to try the route 'rrrrr', we need to represent it as '00
 base-4 number, 4^5, or 1024) to our number, convert it to a string, then remove the leading 1.
 
 Finally, note that there is some functionality that we could have moved from the main function to
-the helper function, createPath, for example, finding the location of the blanks. This would, perhaps,
-have looked neater in the CorrectPath method; however, it would have resulted in recomputation of the
-same item over and over again. So we are better off computing it a single time, then passing it
-into the createPath() method as a parameter.
+the helper function, createPath, for example, finding the location of the blanks. This would,
+perhaps, have looked neater in the CorrectPath method; however, it would have resulted in
+recomputation of the same item over and over again. So we are better off computing it a single
+time, then passing it into the createPath() method as a parameter.
 */
 
 const name = 'CorrectPath';
