@@ -25,6 +25,7 @@ const number = 38;
 const level = 'easy';
 const methods = ['max()', 'forEach()', 'toString()', 'keys()', 'map()', 'max()'];
 const concepts = ['spread operator'];
+let helpers;
 
 const WaveSorting = (arr) => {
 	const len = arr.length;
@@ -41,8 +42,9 @@ helpers = {
 	// of times that value appears in the array.
 
 	frequencyTracker(arr) {
+		console.log('test0');
 		const countObj = {};
-		arr.forEach(val => {
+		arr.forEach((val) => {
 			const valString = val.toString();
 			if (!countObj[valString]) {
 				countObj[valString] = 1;
@@ -55,5 +57,6 @@ helpers = {
 }
 
 module.exports = {
-	WaveSorting
+	WaveSorting,
+	helpers
 };
