@@ -42,7 +42,6 @@ helpers = {
 	// of times that value appears in the array.
 
 	frequencyTracker(arr) {
-		console.log('test0');
 		const countObj = {};
 		arr.forEach((val) => {
 			const valString = val.toString();

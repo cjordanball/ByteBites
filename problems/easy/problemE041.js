@@ -20,13 +20,46 @@ the longest such sequences.
 const name = 'LongestIncreasingSequence';
 const number = 41;
 const level = 'easy';
-const methods = [];
-const concepts = [];
+const methods = ['toString()', 'slice()', 'split()', 'forEach()', 'push()', 'every()', ];
+const concepts = ['permutations'];
+let helpers;
 
 const LongestIncreasingSequence = (arr) => {
-	return arr;
+	const len = arr.length;
+	let maxLength = 0;
+
+	for (let i = 2 ** len; i < (2 ** (len + 1)); i++) {
+		const isArray = i.toString(2).slice(1).split('');
+		const newSeq = [];
+		arr.forEach((val, ind) => {
+			if (isArray[ind] === '1') {
+				newSeq.push(val);
+			}
+		});
+		if (helpers.isAscending(newSeq)){
+			if (newSeq.length > maxLength) {
+				maxLength = newSeq.length;
+			}
+		}
+	}
+	return maxLength;
+};
+
+helpers = {
+	// isAscending checks to see if the array items increase from one item to the next
+	// throughout the array
+	isAscending(arr) {
+		const arrLen = arr.length;
+		return arr.every((val, ind) => {
+			if (ind < arrLen - 1) {
+				return val < arr[ind + 1];
+			}
+			return true;
+		});
+	}
 };
 
 module.exports = {
-	LongestIncreasingSequence
+	LongestIncreasingSequence,
+	helpers
 };
