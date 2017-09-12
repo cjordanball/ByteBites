@@ -5,8 +5,6 @@ example: if num is 4759472 then your program should return 94 because that is th
 double digit number. The input will always contain at least two positive digits.
 */
 
-
-
 const name = 'LargestPair';
 const number = 44;
 const level = 'easy';
