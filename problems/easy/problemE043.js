@@ -56,7 +56,6 @@ helpers = {
 		} else {
 			const newNumString = String(parseInt(numStringVal.join(''), 10) + 1);
 			numStringVal = newNumString.split('');
-			console.log('test0: ', newNumString);
 			returnObj.first = numStringVal.shift();
 			returnObj.last = returnObj.first;
 			returnObj.num = newNumString.slice(1);
