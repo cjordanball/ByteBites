@@ -11,7 +11,8 @@
         "react/jsx-indent-props": [2, 'tab'],
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true}],
         "comma-dangle": ["error", "never"],
-        "no-restricted-syntax": ["error"]
+        "no-restricted-syntax": ["error"],
+        "no-use-before-define": ["error", { "functions": false }]
     },
     "globals": {
         "document": false,
