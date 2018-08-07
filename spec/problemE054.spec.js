@@ -1,4 +1,4 @@
-const { CorrectPath, helpers: { isPathGood, createPath} } = require('../problems/easy/problemE054');
+const { CorrectPath, helpers: { isPathGood, createPath } } = require('../problems/easy/E054CorrectPath');
 
 describe('CorrectPath', () => {
 	describe('CorrectPath', () => {

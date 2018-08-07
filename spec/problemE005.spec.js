@@ -1,4 +1,4 @@
-const { SimpleAddingIt, SimpleAddingRec, SimpleAddingClever } = require('../problems/easy/problemE005');
+const { SimpleAddingIt, SimpleAddingRec, SimpleAddingClever } = require('../problems/easy/E005SimpleAdding');
 
 describe('SimpleAdding', () => {
 	describe('SimpleAddingRec', () => {

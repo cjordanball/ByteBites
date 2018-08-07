@@ -1,18 +1,17 @@
 /*
-Have the function CorrectPath(str) read the str parameter being passed, which will represent the
-movements made in a 5x5 grid of cells starting from the top left position. The characters in the
-input string will be entirely composed of: r, l, u, d, ?. Each of the characters stand for the
-direction to take within the grid, for example: r = right, l = left, u = up, d = down. Your goal
-is to determine what characters the question marks should be in order for a path to be created
-to go from the top left of the grid all the way to the bottom right without touching previously
-travelled-on cells in the grid.
+Have the function CorrectPath(str) read the str parameter being passed, which will represent
+the movements made in a 5x5 grid of cells starting from the top left position. The characters
+in the input string will be entirely composed of: r, l, u, d, ?. Each of the characters stand
+for the direction to take within the grid, for example: r = right, l = left, u = up, d = down.
+Your goal is to determine what characters the question marks should be in order for a path to
+be created to go from the top left of the grid all the way to the bottom right without touching
+previously travelled on cells in the grid.
 
 For example: if str is "r?d?drdd" then your program should output the final correct string that
-will allow a path to be formed from the top left of a 5x5 grid to the bottom right. For this input,
-your program should therefore return the string rrdrdrdd. There will only ever be one correct path
-and there will always be at least one question mark within the input string.
+will allow a path to be formed from the top left of a 5x5 grid to the bottom right. For this
+input, your program should therefore return the string rrdrdrdd. There will only ever be one
+correct path and there will always be at least one question mark within the input string.
 */
-
 
 /*
 First, I am not at all certain this qualifies as an "easy" challenge. The solution below takes a
@@ -41,83 +40,90 @@ recomputation of the same item over and over again. So we are better off computi
 time, then passing it into the createPath() method as a parameter.
 */
 
-const name = 'CorrectPath';
-const number = 54;
-const level = 'easy';
-const methods = ['split()', 'forEach()', 'toString()', 'slice()', 'push()', 'includes()', 'join()', 'splice()'];
-const concepts = [];
-let helpers = {};
+const info = {
+	name: 'Correct Path',
+	number: 54,
+	level: 'easy',
+	methods: [],
+	concepts: []
+};
+let helpers;
 
-const CorrectPath = (str) => {
-	// create an array to hold the positions of the question marks
+function CorrectPath(str) {
+    // create an array to hold the positions of the question marks
 	const blankArray = [];
+	// put the position of the question marks into the array
 	str.split('').forEach((val, ind) => {
 		if (val === '?') {
 			blankArray.push(ind);
 		}
 	});
-	const numBlanks = blankArray.length;
-	const total = 4 ** numBlanks;
+
+	const num = blankArray.length;
+
+	// we are going to try each possibility until we find one that works, with 4^num permutations
+	const total = 4 ** num;
 
 	for (let i = 0; i < total; i++) {
+		// go through each permutation, creating a counter, then making the path and testing it
 		const numString = (i + total).toString(4).slice(1);
 		const currentPath = helpers.createPath(str, blankArray, numString);
 		if (helpers.isPathGood(currentPath)) {
 			return currentPath;
 		}
 	}
-};
+}
 
 helpers = {
-	// isPathGood takes a potential path and evaluates it, returning true if it successfully
-	// gets from start to end, and returning false if it doesn't (for example, goes outside
-	// the box, revisits locations, or doesn't get to the end)
-
 	isPathGood(str) {
-		// set up an array to represent where our path has been: 0 = not touched, 1 = touched
-		const trackingArray = [];
+		// create our empty array
+		const testArray = [];
 		for (let i = 0; i < 5; i++) {
-			trackingArray.push([0, 0, 0, 0, 0]);
+			testArray.push([0, 0, 0, 0, 0]);
 		}
 
 		const len = str.length;
 		let currentLoc = [0, 0];
 
 		for (let i = 0; i < len; i++) {
-			trackingArray[currentLoc[0]][currentLoc[1]] = 1;
+			// mark our current square as visited
+			testArray[currentLoc[0]][currentLoc[1]] = 1;
+			// alter the position based on the next letter
 			const newLoc = currentLoc.slice(0);
-
 			switch (str[i]) {
-				case 'u':
-					newLoc[0] -= 1;
-					break;
-				case 'd':
-					newLoc[0] += 1;
-					break;
-				case 'r':
-					newLoc[1] += 1;
-					break;
-				case 'l':
-					newLoc[1] -= 1;
-					break;
-				default:
-					break;
+			case 'u':
+				newLoc[0] -= 1;
+				break;
+			case 'd':
+				newLoc[0] += 1;
+				break;
+			case 'r':
+				newLoc[1] += 1;
+				break;
+			case 'l':
+				newLoc[1] -= 1;
+				break;
+			default:
+				break;
 			}
+			// quit if we have gone off the board
 			if (newLoc.includes(-1) || newLoc.includes(5)) {
 				return false;
 			}
-			if (trackingArray[newLoc[0]][newLoc[1]] === 1) {
+			// quit if we are on a previously visited space
+			if (testArray[newLoc[0]][newLoc[1]] === 1) {
 				return false;
 			}
+			// return true if we are at the target square on our last go
 			if (newLoc[0] === 4 && newLoc[1] === 4 && i === len - 1) {
 				return true;
 			}
+			// update our location for the next loop;
 			currentLoc = newLoc;
 		}
 		return false;
 	},
-	// createPath takes the given, incomplete path, the positions of the blanks, and the list
-	// of values to insert, and creates a path for testing.
+
 	createPath(str, blanks, num) {
 		const moveArray = ['r', 'l', 'u', 'd'];
 		const strArr = str.split('');
@@ -126,7 +132,7 @@ helpers = {
 		});
 		return strArr.join('');
 	}
-}
+};
 
 module.exports = {
 	CorrectPath,
