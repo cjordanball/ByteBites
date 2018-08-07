@@ -1,4 +1,4 @@
-const { FoodDistribution } = require('../problems/easy/problemE052');
+const { FoodDistribution } = require('../problems/easy/E052FoodDistribution');
 
 // this testing is really lame. Just not enough time right now.  Should test the helper
 // methods as well
