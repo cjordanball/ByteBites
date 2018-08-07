@@ -1,4 +1,4 @@
-const { LongestWord } = require('../problems/easy/problemE003');
+const { LongestWord } = require('../problems/easy/E003LongestWord');
 
 describe('LongestWord', () => {
 	it('should ignore punctuation', () => {

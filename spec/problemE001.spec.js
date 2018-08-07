@@ -1,4 +1,4 @@
-const { FirstReverse } = require('../problems/easy/problemE001');
+const { FirstReverse } = require('../problems/easy/E001FirstReverse');
 
 describe('First Reverse', () => {
 	it('should return an empty string, if no argument given', () => {
