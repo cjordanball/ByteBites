@@ -14,11 +14,14 @@ this approach allows me to write tests, then solve the problem backward, testing
 first, then working out to the ultimate goal.
 */
 
-const name = 'LetterChanges';
-const number = 4;
-const level = 'easy';
-const method = ['trim()', 'toLowerCase()', 'test()', 'fromCharCode()', 'charCodeAt()', 'replace()', 'toUpperCase()'];
-const concepts = ['of operator', 'modulo operator', 'regular expressions', 'replace() with callback'];
+const info = {
+	name: 'LetterChanges',
+	number: 4,
+	level: 'easy',
+	method: ['trim()', 'toLowerCase()', 'test()', 'fromCharCode()', 'charCodeAt()', 'replace()', 'toUpperCase()'],
+	concepts: ['of operator', 'modulo operator', 'regular expressions', 'replace() with callback']
+};
+
 let helpers;
 
 const LetterChanges = (str) => {

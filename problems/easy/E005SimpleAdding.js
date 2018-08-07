@@ -9,11 +9,13 @@ Below are three solutions to this problem: the first is iterative, the second is
 and the third is clever (attributed to Gauss in his early childhood).
 */
 
-const name = 'SimpleAdding';
-const number = 5;
-const level = 'easy';
-const methods = [];
-const concepts = ['for loop', '++ operator', 'recursion', 'ternary operator'];
+const info = {
+	name: 'SimpleAdding',
+	number: 5,
+	level: 'easy',
+	methods: [],
+	concepts: ['for loop', '++ operator', 'recursion', 'ternary operator']
+};
 
 
 const SimpleAddingIt = (num) => {
