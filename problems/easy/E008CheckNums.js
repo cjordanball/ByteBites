@@ -13,15 +13,15 @@ it returns the value "-1", and if they are not equal, it evaluates the final exp
 returns what it evaluates to, which will be true or false.
 */
 
-const name = 'CheckNums';
-const number = 8;
-const level = 'easy';
-const methods = [];
-const concepts = ['ternary operator'];
-
-const CheckNums = (num1, num2) => {
-	return num1 === num2 ? '-1' : num2 > num1;
+info = {
+	name: 'CheckNums',
+	number: 8,
+	level: 'easy',
+	methods: [],
+	concepts: ['ternary operator']
 };
+
+const CheckNums = (num1, num2) => (num1 === num2 ? '-1' : num2 > num1);
 
 module.exports = {
 	CheckNums
