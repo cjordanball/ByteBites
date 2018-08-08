@@ -7,11 +7,13 @@ by a + symbol. So the string in the example would result in false. The string wi
 be empty and will have at least one letter.
 */
 
-const name = 'SimpleSymbols';
-const number = 7;
-const level = 'easy';
-const methods = ['replace()', 'toUpperCase()'];
-const concepts = ['regular expressions'];
+const info = {
+	name: 'SimpleSymbols',
+	number: 7,
+	level: 'easy',
+	methods: ['replace()', 'toUpperCase()'],
+	concepts: ['regular expressions']
+};
 
 const SimpleSymbols = (str) => {
 	// make an array of the regex descriptions that cannot exist in the input
