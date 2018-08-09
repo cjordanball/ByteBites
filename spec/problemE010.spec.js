@@ -1,4 +1,4 @@
-const { AlphabetSoup } = require('../problems/easy/problemE010');
+const { AlphabetSoup } = require('../problems/easy/E010AlphabetSoup');
 
 describe('AlphabetSoup', () => {
 	it('place capital letters first', () => {

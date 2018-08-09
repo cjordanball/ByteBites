@@ -9,11 +9,13 @@ Like most computer languages,  Javascript provides an operator "%" to give us th
 of a divsion, which makes this a pretty simple problem.
 */
 
-const name = 'TimeConvert';
-const number = 9;
-const level = 'easy';
-const methods = ['floor', 'toString'];
-const concepts = ['remainder operator', 'template strings'];
+const info = {
+	name: 'TimeConvert',
+	number: 9,
+	level: 'easy',
+	methods: ['floor', 'toString'],
+	concepts: ['remainder operator', 'template strings']
+};
 
 const TimeConvert = (num) => {
 	if (num < 0) {
