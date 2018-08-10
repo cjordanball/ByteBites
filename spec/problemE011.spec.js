@@ -1,4 +1,4 @@
-const { ABCheck } = require('../problems/easy/problemE011');
+const { ABCheck } = require('../problems/easy/E011ABCheck');
 
 describe('ABCheck', () => {
 	it('finds patterns with a followed by b three spaces later', () => {

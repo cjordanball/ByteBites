@@ -24,11 +24,13 @@ expression with the 'g' flag), returns an array of all matches, but if there are
 returns null, not an empty array!
 */
 
-const name = 'VowelCount';
-const number = 12;
-const level = 'easy';
-const methods = ['match()'];
-const concepts = ['regular expressions'];
+const info = {
+	name: 'VowelCount',
+	number: 12,
+	level: 'easy',
+	methods: ['match()'],
+	concepts: ['regular expressions']
+};
 
 const VowelCount = (str) => {
 	const arr = str.match(/[aeiou]/gi);
