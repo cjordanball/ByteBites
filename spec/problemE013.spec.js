@@ -1,4 +1,4 @@
-const { WordCount } = require('../problems/easy/problemE013');
+const { WordCount } = require('../problems/easy/E013WordCount');
 
 describe('WordCount', () => {
 	it('should determine the number of words in a string', () => {
