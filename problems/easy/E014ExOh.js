@@ -19,11 +19,13 @@ strings of millions of characters or larger, it would be better to have a single
 keeping track of the difference in x and o counts.
 */
 
-const name = 'ExOh';
-const number = 14;
-const level = 'easy';
-const methods = ['split()', 'filter()'];
-const concepts = ['chaining', 'array length', 'logical or'];
+const info = {
+	name: 'ExOh',
+	number: 14,
+	level: 'easy',
+	methods: ['split()', 'filter()'],
+	concepts: ['chaining', 'array length', 'logical or']
+};
 
 const ExOh = (str) => {
 	const arr = str.split('');
