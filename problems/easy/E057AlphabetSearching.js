@@ -15,11 +15,11 @@ hit a letter not included in the string.
 */
 
 const info = {
-	name: 'Three Numbers',
-	number: 56,
+	name: 'Alphabet Searching',
+	number: 57,
 	level: 'easy',
-	methods: ['string.includes()', 'toLowerCase()', 'fromCharCode()'],
-	concepts: ['for loop', 'conditional']
+	methods: [],
+	concepts: []
 };
 
 function AlphabetSearching(str) {

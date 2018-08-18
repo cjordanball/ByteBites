@@ -8,6 +8,14 @@ difference of 40 minutes. The input array will always contain at least two eleme
 all of the elements will be in the correct format and unique.
 */
 
+const info = {
+	name: 'Time Difference',
+	number: 58,
+	level: 'easy',
+	methods: [],
+	concepts: []
+};
+
 function TimeDifference(strArr) {
     // times will hold our time differences
 	const times = [];
