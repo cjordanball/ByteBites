@@ -1,4 +1,4 @@
-const { Palindrome } = require('../problems/easy/problemE015');
+const { Palindrome } = require('../problems/easy/E015Palindrome');
 
 describe('Palindrome', () => {
 	it('should see if a string is a palindrome', () => {

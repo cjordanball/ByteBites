@@ -11,11 +11,13 @@ above is no exception. Do spaces count?, do cases have to match?, etc.  Anyway, 
 is a solution that is case-insensitive, but space-sensitive.
 */
 
-const name = 'Palindrome';
-const number = 15;
-const level = 'easy';
-const methods = ['toLowerCase()', 'charAt()'];
-const concepts = ['for loop'];
+const info = {
+	name: 'Palindrome',
+	number: 15,
+	level: 'easy',
+	methods: ['toLowerCase()', 'charAt()'],
+	concepts: ['for loop']
+};
 
 const Palindrome = (str) => {
 	const lowerCaseString = str.toLowerCase();
