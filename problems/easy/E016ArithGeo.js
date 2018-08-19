@@ -7,19 +7,18 @@ is the same, whereas a geometric sequence is one in which each pair of consecuti
 the same multiple. For example, an arithmetic sequence could be: [2, 4, 6, 8] and a geometric
 example could be: [2, 6, 18, 54]. Negative numbers may be entered in the array, an empty
 array will not be entered, and no array will contain all the same elements.
- */
+*/
 
-const name = 'ArithGeo';
-const number = 16;
-const level = 'easy';
-const methods = ['includes()'];
-const concepts = ['for loop', ''];
-let helpers;
-
-const ArithGeo = (arr) => {
-	return helpers.ArithTest(arr) || helpers.GeoTest(arr) || -1;
+const info = {
+	name: 'ArithGeo',
+	number: 16,
+	level: 'easy',
+	methods: [''],
+	concepts: ['for loop', 'logical OR']
 };
 
+let helpers;
+const ArithGeo = arr => helpers.ArithTest(arr) || helpers.GeoTest(arr) || -1;
 
 helpers = {
 	ArithTest(arr) {
