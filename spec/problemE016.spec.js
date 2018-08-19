@@ -1,4 +1,4 @@
-const { ArithGeo, helpers: { ArithTest, GeoTest } } = require('../problems/easy/problemE016');
+const { ArithGeo, helpers: { ArithTest, GeoTest } } = require('../problems/easy/E016ArithGeo');
 
 describe('ArithGeo', () => {
 	describe('ArithTest', () => {
