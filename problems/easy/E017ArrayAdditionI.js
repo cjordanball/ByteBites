@@ -21,11 +21,13 @@ So, for example, if the array is [1, 2, 3, 4, 5], the number represented by '101
 (i.e., 1 + 3 + 4).
 */
 
-const name = 'ArrayAdditionI';
-const number = 17;
-const level = 'easy';
-const methods = ['sort()', 'from()', 'pop()', 'slice()', 'toString()', 'split()', 'forEach()'];
-const concepts = ['exponential operator', 'while loops', 'permutations'];
+const info = {
+	name: 'ArrayAdditionI',
+	number: 17,
+	level: 'easy',
+	methods: ['sort()', 'from()', 'pop()', 'slice()', 'toString()', 'split()', 'forEach()'],
+	concepts: ['exponential operator', 'while loops', 'permutations']
+};
 
 
 const ArrayAdditionI = (arr) => {
@@ -34,7 +36,7 @@ const ArrayAdditionI = (arr) => {
 	const permutationCount = 2 ** arrayCopy.length;
 	let counter = 1;
 
-	while(counter < permutationCount) {
+	while (counter < permutationCount) {
 		// the line below might be a little tricky.  What we want to do, for each number
 		// from 1 to 2^n, is have a string representation of whether each of n numbers is
 		// in or out. To do this, we need leading zeroes, for example, just including the
@@ -42,7 +44,7 @@ const ArrayAdditionI = (arr) => {
 		// initial 1 to the base-2 number via the initial addition, then take the initial
 		// on away once the number has become a string.
 
-		let permutationArray = (counter + permutationCount).toString(2).slice(1).split('');
+		const permutationArray = (counter + permutationCount).toString(2).slice(1).split('');
 		let sum = 0;
 
 		permutationArray.forEach((val, ind) => {
