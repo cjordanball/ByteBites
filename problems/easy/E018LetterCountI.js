@@ -6,11 +6,14 @@ has 2 e's. If there are no words with repeating letters return -1. Words will be
 spaces.
  */
 
-const name = 'LetterCountI';
-const number = 18;
-const level = 'easy';
-const methods = ['split()', 'sort()', 'forEach()', 'Object.keys()', 'includes()', 'map()', 'Math.max()'];
-const concepts = ['ternary expressions', 'spread operator'];
+const info = {
+	name: 'LetterCountI',
+	number: 18,
+	level: 'easy',
+	methods: ['split()', 'sort()', 'forEach()', 'Object.keys()', 'includes()', 'map()', 'Math.max()'],
+	concepts: ['ternary expressions', 'spread operator']
+};
+
 let helpers;
 
 const LetterCountI = (str) => {
@@ -43,4 +46,3 @@ module.exports = {
 	LetterCountI,
 	helpers
 };
-
