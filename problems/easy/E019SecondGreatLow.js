@@ -31,11 +31,13 @@ what is the largest number we have encountered, what is the smallest number we h
 and what are the runner-ups in each category (but must be different from leading numbers).
 */
 
-const name = 'SecondGreatLow';
-const number = 19;
-const level = 'easy';
-const methods = [];
-const concepts = ['template literals', 'for loop', 'objects', '||', '&&'];
+const info = {
+	name: 'SecondGreatLow',
+	number: 19,
+	level: 'easy',
+	methods: [],
+	concepts: ['template literals', 'for loop', 'objects', '||', '&&']
+};
 
 const SecondGreatLow = (arr) => {
 	const dataObject = {
@@ -43,7 +45,8 @@ const SecondGreatLow = (arr) => {
 		low2: null,
 		high2: null,
 		high: null
-	}
+	};
+
 	const len = arr.length;
 
 	for (let i = 0; i < len; i++) {
@@ -66,5 +69,6 @@ const SecondGreatLow = (arr) => {
 };
 
 module.exports = {
-	SecondGreatLow
-}
+	SecondGreatLow,
+	info
+};
