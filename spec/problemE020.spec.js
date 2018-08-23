@@ -1,4 +1,4 @@
-const { DivisionStringified } = require('../problems/easy/problemE020');
+const { DivisionStringified } = require('../problems/easy/E020DivisionStringified');
 
 describe('DivisionStringified', () => {
 	it('should return 3 or fewer digit numbers unchanged', () => {

@@ -12,11 +12,13 @@ requesting. The more complete answer could be easily given by use of the % opera
 separate out the remainder, then adding it back in.
 */
 
-const name = 'DivisionStringified';
-const number = 20;
-const level = 'easy';
-const methods = ['trunc()', 'toString()', 'split()', 'splice()', 'join()'];
-const concepts = ['for loop'];
+const info = {
+	name: 'DivisionStringified',
+	number: 20,
+	level: 'easy',
+	methods: ['trunc()', 'toString()', 'split()', 'splice()', 'join()'],
+	concepts: ['for loop']
+};
 
 const DivisionStringified = (num1, num2) => {
 	let rawNumberString = Math.trunc(num1 / num2).toString();
@@ -32,6 +34,6 @@ const DivisionStringified = (num1, num2) => {
 };
 
 module.exports = {
-	DivisionStringified
-}
-
+	DivisionStringified,
+	info
+};
