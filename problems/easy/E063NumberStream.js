@@ -27,5 +27,6 @@ function NumberStream(str) {
 }
 
 module.exports = {
-	NumberStream
+	NumberStream,
+	info
 };
