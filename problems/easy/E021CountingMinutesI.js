@@ -12,14 +12,15 @@ spilling over into two days. One thing of interest, however, is how we are able 
 grab the number of minutes, without the "am" or "pm" affecting the return value.
  */
 
+const info = {
+	name: 'CountingMinutesI',
+	number: 21,
+	level: 'easy',
+	methods: ['includes()', 'parseInt()'],
+	concepts: ['ternary expressions']
+};
 
-const name = 'CountingMinutes';
-const number = 21;
-const level = 'easy';
-const methods = ['includes()', 'parseInt()'];
-const concepts = ['ternary expressions'];
-
-const CountingMinutes = (str) => {
+const CountingMinutesI = (str) => {
 	const timesArray = str.split(/[:-]/g);
 
 	const hour1 = timesArray[1].includes('am') ? parseInt(timesArray[0], 10) : parseInt(timesArray[0], 10) + 12;
@@ -34,5 +35,6 @@ const CountingMinutes = (str) => {
 };
 
 module.exports = {
-	CountingMinutes
-}
+	CountingMinutesI,
+	info
+};
