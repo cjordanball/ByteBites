@@ -12,7 +12,8 @@
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true}],
         "comma-dangle": ["error", "never"],
         "no-restricted-syntax": ["error"],
-        "no-use-before-define": ["error", { "functions": false }]
+        "no-use-before-define": ["error", { "functions": false }],
+        "no-confusing-arrow": ["off", {"allowParens": true}]
     },
     "globals": {
         "document": false,

@@ -5,23 +5,22 @@ mode equals the mean, and 0 if they don't equal each other (i.e., [5, 3, 3, 3, 1
 positive integers, and will not contain more than one mode.
  */
 
-const name = 'MeanMode';
-const number = 22;
-const level = 'easy';
-const methods = ['reduce()', 'toString()', 'parseInt()'];
-const concepts = ['iterating over an object', 'for in loop', 'for loop', 'dynamic object properties'];
+const info = {
+	name: 'MeanMode',
+	number: 22,
+	level: 'easy',
+	methods: ['reduce()', 'toString()', 'parseInt()'],
+	concepts: ['iterating over an object', 'for in loop', 'for loop', 'dynamic object properties']
+};
+
 let helpers;
 
-const MeanMode = (arr) => {
-		return helpers.meanTest(arr) === helpers.modeTest(arr) ? 1 : 0;
-};
+const MeanMode = arr => helpers.meanTest(arr) === helpers.modeTest(arr) ? 1 : 0;
 
 helpers = {
 	meanTest(arr) {
 		const len = arr.length;
-		const sum = arr.reduce((num1, num2) => {
-			return num1 + num2;
-		}, 0);
+		const sum = arr.reduce((num1, num2) => num1 + num2, 0);
 		return sum / len;
 	},
 
@@ -39,17 +38,19 @@ helpers = {
 				trackerObj[myNum] += 1;
 			}
 		}
-		for (const prop in trackerObj) {
-			if (trackerObj[prop] > counter) {
-				mode = prop;
-				counter = trackerObj[prop];
+		const props = Object.keys(trackerObj);
+		props.forEach((val) => {
+			if (trackerObj[val] > counter) {
+				mode = val;
+				counter = trackerObj[val];
 			}
-		}
+		});
 		return parseInt(mode, 10);
 	}
 };
 
 module.exports = {
 	MeanMode,
-	helpers
-}
+	helpers,
+	info
+};
