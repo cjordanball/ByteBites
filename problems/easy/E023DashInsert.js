@@ -8,7 +8,7 @@ between any two consecutive odd numbers in num. For example: if str is 454793 th
 Below are two solutions to this problem. The first is the obvious solution to the problem, using
 a while loop to iterate over the string and evaluate whether a dash should be inserted at each step.
 Be careful if using a for loop, as the length of the string will increase as the dashes are
-inserted. The second solution makes use of regular expressions to identify patters of odd digits
+inserted. The second solution makes use of regular expressions to identify patterns of odd digits
 and the replace method to insert the required dashes. It is a great example of how regular
 expressions can be uses to simplify a coding problem - assuming one puts in a little bit of
 work up front to learn the required syntax.
@@ -17,11 +17,13 @@ For the first solution, here is one quick quiz: Why is the code work when we run
 array, if most of the items in the array are numbers, not strings?
 */
 
-const name = 'DashInsert';
-const number = 23;
-const level = 'easy';
-const methods = ['toString()', 'split()', 'map()', 'parseInt()', 'splice()', 'join()', 'replace()'];
-const concepts = ['array iterators', 'while loops', 'modulus operator', 'regular expressions'];
+const info = {
+	name: 'DashInsert',
+	number: 23,
+	level: 'easy',
+	methods: ['toString()', 'split()', 'map()', 'parseInt()', 'splice()', 'join()', 'replace()'],
+	concepts: ['array iterators', 'while loops', 'modulus operator', 'regular expressions']
+};
 
 const DashInsert1 = (num) => {
 	const numStr = num.toString();
@@ -45,6 +47,6 @@ const DashInsert2 = (num) => {
 
 module.exports = {
 	DashInsert1,
-	DashInsert2
+	DashInsert2,
+	info
 };
-
