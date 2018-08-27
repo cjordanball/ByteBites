@@ -10,11 +10,13 @@ the string and then examing the ASCII code of the character to see if it is an u
 lowercase letter.
  */
 
-const name = 'SwapCase';
-const number = 24;
-const level = 'easy';
-const methods = ['charCodeAt()', 'toLowerCase()', 'toUpperCase()'];
-const concepts = ['for loop', 'if - else if - else', 'character codes'];
+const info = {
+	name: 'SwapCase',
+	number: 24,
+	level: 'easy',
+	methods: ['charCodeAt()', 'toLowerCase()', 'toUpperCase()'],
+	concepts: ['for loop', 'if - else if - else', 'character codes']
+};
 
 const SwapCase = (str) => {
 	let newStr = '';
@@ -35,5 +37,6 @@ const SwapCase = (str) => {
 
 
 module.exports = {
-	SwapCase
+	SwapCase,
+	info
 };
