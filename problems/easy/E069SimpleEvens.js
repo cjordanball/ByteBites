@@ -8,8 +8,8 @@ const info = {
 	name: 'SimpleEvens',
 	number: 69,
 	level: 'easy',
-	methods: [],
-	concepts: []
+	methods: ['toString()', 'search()'],
+	concepts: ['regular expressions', 'ternary operator']
 };
 
 const SimpleEvens = num => num.toString(10).search(/[13579]/) === -1 ? 'true' : 'false';
