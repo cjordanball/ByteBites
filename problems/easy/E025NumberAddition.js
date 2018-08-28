@@ -18,19 +18,20 @@ resulting from the map method, which are going to be integers, so we can then ru
 method on it, ultimately returning our summation value.
  */
 
-const name = 'NumberAddition';
-const number = 25;
-const level = 'easy';
-const methods = [];
-const concepts = [];
+const info = {
+	name: 'NumberAddition',
+	number: 25,
+	level: 'easy',
+	method: ['match()', 'map()', 'reduce()'],
+	concept: ['chained functions', 'regular expressions']
+};
 
-const NumberAddition = (str) => {
-	return str
+const NumberAddition = str => str
 	.match(/\d+/g)
 	.map(val => parseInt(val, 10))
 	.reduce((val1, val2) => val1 + val2, 0);
-};
 
 module.exports = {
-	NumberAddition
+	NumberAddition,
+	info
 };
