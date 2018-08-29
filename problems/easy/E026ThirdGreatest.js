@@ -16,15 +16,18 @@ JavaScript's sort() method, which it going to take relatively longer than simply
 the array.
 */
 
-const name = 'ThirdGreatest';
-const number = 26;
-const level = 'easy';
-const methods = ['sort()', 'filter()', 'pop()', 'splice()', 'slice()', 'findIndex()'];
-const concepts = [];
+const info = {
+	name: 'ThirdGreatest',
+	number: 26,
+	level: 'easy',
+	methods: ['sort()', 'filter()', 'pop()', 'splice()', 'slice()', 'findIndex()'],
+	concepts: []
+};
+
 let helpers;
 
 const ThirdGreatest1 = (strArr) => {
-	strArr.sort((val1, val2) => val2.length - val1.length)
+	strArr.sort((val1, val2) => val2.length - val1.length);
 	const len = strArr[2].length;
 	return strArr
 		.filter(val => val.length === len)
@@ -41,8 +44,8 @@ const ThirdGreatest2 = (strArr) => {
 			orderArr = orderArr.slice(0, 3);
 		}
 	}
-	let wordLen = orderArr[2].length;
-	let ind = orderArr.findIndex(item => item.length === wordLen);
+	const wordLen = orderArr[2].length;
+	const ind = orderArr.findIndex(item => item.length === wordLen);
 	return orderArr[ind];
 };
 
@@ -51,10 +54,11 @@ helpers = {
 		const itemLen = item.length;
 		return arr.findIndex(val => itemLen >= val.length);
 	}
-}
+};
 
 
 module.exports = {
 	ThirdGreatest1,
-	ThirdGreatest2
+	ThirdGreatest2,
+	info
 };
