@@ -13,7 +13,8 @@
         "comma-dangle": ["error", "never"],
         "no-restricted-syntax": ["error"],
         "no-use-before-define": ["error", { "functions": false }],
-        "no-confusing-arrow": ["off", {"allowParens": true}]
+        "no-confusing-arrow": ["off", {"allowParens": true}],
+        "no-continue": "off"
     },
     "globals": {
         "document": false,

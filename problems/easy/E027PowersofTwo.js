@@ -10,11 +10,13 @@ The problem states that we are only looking for a positive, integral power, so t
 the number could be is 2.
 */
 
-const name = 'PowersofTwo';
-const number = 27;
-const level = 'easy';
-const methods = ['isInteger()', 'toString()', 'test()'];
-const concepts = ['binary numbers', 'radix', 'regular expressions'];
+const info = {
+	name: 'PowersofTwo',
+	number: 27,
+	level: 'easy',
+	methods: ['isInteger()', 'toString()', 'test()'],
+	concepts: ['binary numbers', 'radix', 'regular expressions']
+};
 
 const PowersofTwo = (num) => {
 	// deal with numbers less than 2
@@ -28,5 +30,6 @@ const PowersofTwo = (num) => {
 };
 
 module.exports = {
-	PowersofTwo
+	PowersofTwo,
+	info
 };
