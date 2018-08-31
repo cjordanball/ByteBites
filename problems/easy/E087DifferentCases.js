@@ -20,7 +20,7 @@ of validating input.
 
 const info = {
 	name: ['DifferentCases'],
-	number: 86,
+	number: 87,
 	level: 'easy',
 	methods: [],
 	concepts: []

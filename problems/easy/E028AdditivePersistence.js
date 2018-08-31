@@ -12,11 +12,14 @@ to take note of the structure, which separates the "do something and count how m
 you do it" from the actual "something" that is done.
 */
 
-const name = 'AdditivePersistence';
-const number = 28;
-const level = 'easy';
-const methods = ['toString()', 'split()', 'map()', 'reduce()'];
-const concepts = ['while loop'];
+const info = {
+	name: 'AdditivePersistence',
+	number: 28,
+	level: 'easy',
+	methods: ['toString()', 'split()', 'map()', 'reduce()'],
+	concepts: ['while loop']
+};
+
 let helpers;
 
 const AdditivePersistence = (num) => {
@@ -38,9 +41,10 @@ helpers = {
 			.reduce((num1, num2) => num1 + num2, 0);
 		return reducedNum;
 	}
-}
+};
 
 module.exports = {
 	AdditivePersistence,
-	helpers
+	helpers,
+	info
 };
