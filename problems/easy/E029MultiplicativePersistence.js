@@ -6,11 +6,14 @@ num is 39 then your program should return 3 because 3 * 9 = 27 then 2 * 7 = 14 a
 1 * 4 = 4 and you stop at 4.
 */
 
-const name = 'MultiplicativePersistence';
-const number = 29;
-const level = 'easy';
-const methods = ['toString()', 'split()', 'map()', 'reduce()'];
-const concepts = ['while loop'];
+const info = {
+	name: 'MultiplicativePersistence',
+	number: 29,
+	level: 'easy',
+	methods: ['toString()', 'split()', 'map()', 'reduce()'],
+	concepts: ['while loop']
+};
+
 let helpers;
 
 const MultiplicativePersistence = (num) => {
@@ -32,9 +35,10 @@ helpers = {
 			.reduce((num1, num2) => num1 * num2, 1);
 		return reducedNum;
 	}
-}
+};
 
 module.exports = {
 	MultiplicativePersistence,
-	helpers
+	helpers,
+	info
 };
