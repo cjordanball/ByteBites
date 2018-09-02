@@ -20,12 +20,13 @@ The findIndex method works well for our purposes here, because it returns -1 if 
 no matching index.
 */
 
-const name = 'ChangingSequence';
-const number = 31;
-const level = 'easy';
-const methods = [];
-const concepts = ['while loop'];
-let helpers;
+const info = {
+	name: 'ChangingSequence',
+	number: 31,
+	level: 'easy',
+	methods: [],
+	concepts: ['while loop']
+};
 
 const ChangingSequence = (arr) => {
 	// first, determine if the initial sequence is increasing or decreasing
@@ -43,5 +44,6 @@ const ChangingSequence = (arr) => {
 };
 
 module.exports = {
-	ChangingSequence
+	ChangingSequence,
+	info
 };
