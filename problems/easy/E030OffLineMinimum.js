@@ -12,11 +12,13 @@ program should return 4,1,5.
 The problem description is not particularly clear, but is illuminated by the example given.
  */
 
-const name = 'OffLineMinimum';
-const number = 30;
-const level = 'easy';
-const methods = ['push()', 'min()', 'findIndex', 'Number()', 'splice()'];
-const concepts = ['while loop', 'ternary expression'];
+const info = {
+	name: 'OffLineMinimum',
+	number: 30,
+	level: 'easy',
+	methods: ['push()', 'min()', 'findIndex', 'Number()', 'splice()'],
+	concepts: ['while loop', 'ternary expression']
+};
 
 const OffLineMinimum = (arr) => {
 	const resArr = [];
@@ -39,5 +41,6 @@ const OffLineMinimum = (arr) => {
 };
 
 module.exports = {
-	OffLineMinimum
+	OffLineMinimum,
+	info
 };
