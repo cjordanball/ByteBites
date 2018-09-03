@@ -1,7 +1,7 @@
 {
     "extends": "airbnb",
     "rules": {
-        "indent": ["error", tab],
+        "indent": ["error", tab, {"SwitchCase": 1}],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "no-tabs": "off",
         "react/jsx-indent": [2, 'tab'],
