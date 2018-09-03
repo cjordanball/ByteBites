@@ -16,11 +16,13 @@ Making the assumption that the input is clean (e.g., the numbers are integers, t
 are set from min, max), then this is a pretty simple problem.
 */
 
-const name = 'OverlappingRanges';
-const number = 32;
-const level = 'easy';
-const methods = ['max()', 'min()'];
-const concepts = ['ternary statement'];
+const info = {
+	name: 'OverlappingRanges',
+	number: 32,
+	level: 'easy',
+	methods: ['Math.max()', 'Math.min()'],
+	concepts: ['ternary operater']
+};
 
 const OverlappingRanges = (arr) => {
 	const target = arr[4];
@@ -33,5 +35,6 @@ const OverlappingRanges = (arr) => {
 };
 
 module.exports = {
-	OverlappingRanges
+	OverlappingRanges,
+	info
 };
