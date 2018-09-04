@@ -1,4 +1,4 @@
-const { Superincreasing } = require('../problems/easy/problemE033');
+const { Superincreasing } = require('../problems/easy/E033Superincreasing');
 
 describe('Superincreasing', () => {
 	it('should return false for a single entry array', () => {

@@ -16,19 +16,21 @@ will be doing a lot of unnecessary calculation; instead, we should hold onto our
 each step, then add the next piece to it.
 */
 
-const name = 'Superincreasing';
-const number = 33;
-const level = 'easy';
-const methods = [];
-const concepts = ['for-loop', 'efficiency', 'if-statement'];
+const info = {
+	name: 'Superincreasing',
+	number: 33,
+	level: 'easy',
+	methods: [],
+	concepts: ['for-loop', 'efficiency', 'if-statement']
+};
 
 const Superincreasing = (arr) => {
 	let count = 0;
-	let len = arr.length;
+	const len = arr.length;
 	if (len === 1) {
 		return 'false';
 	}
-	for (let i = 1; i < len; i++ ) {
+	for (let i = 1; i < len; i++) {
 		count += arr[i - 1];
 		if (count >= arr[i]) {
 			return 'false';
@@ -38,5 +40,6 @@ const Superincreasing = (arr) => {
 };
 
 module.exports = {
-	Superincreasing
+	Superincreasing,
+	info
 };
