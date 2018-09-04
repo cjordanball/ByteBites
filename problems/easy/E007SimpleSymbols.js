@@ -23,5 +23,6 @@ const SimpleSymbols = (str) => {
 };
 
 module.exports = {
-	SimpleSymbols
+	SimpleSymbols,
+	info
 };
