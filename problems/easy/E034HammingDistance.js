@@ -14,11 +14,13 @@ being more straightforward, is to use a simple for loop to iterate over the two 
 and compare each letter, keeping a count of the number of places that do not match.
 */
 
-const name = 'HammingDistance';
-const number = 34;
-const level = 'easy';
-const methods = ['split()', 'filter()', ''];
-const concepts = ['for-loop', 'if-statement'];
+const info = {
+	name: 'HammingDistance',
+	number: 34,
+	level: 'easy',
+	methods: ['split()', 'filter()', ''],
+	concepts: ['for-loop', 'if-statement']
+};
 
 const HammingDistance1 = (strArr) => {
 	const word1 = strArr[0];
@@ -44,13 +46,12 @@ const HammingDistance2 = (strArr) => {
 	const word1Arr = strArr[0].split('');
 	const word2 = strArr[1];
 	return word1Arr
-		.filter((val, ind) => {
-			return val !== word2[ind];
-		})
+		.filter((val, ind) => val !== word2[ind])
 		.length;
-}
+};
 
 module.exports = {
 	HammingDistance1,
-	HammingDistance2
+	HammingDistance2,
+	info
 };
