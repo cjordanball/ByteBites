@@ -1,4 +1,4 @@
-const { RectangleArea, helpers: { distanceFinder } } = require('../problems/easy/problemE035');
+const { RectangleArea, helpers: { distanceFinder } } = require('../problems/easy/E035RectangleArea');
 
 describe('RectangleArea', () => {
 	describe('RectangleArea', () => {
@@ -6,7 +6,6 @@ describe('RectangleArea', () => {
 			expect(RectangleArea(['(-10 0)', '(-3 0)', '(-10 2)', '(-3 2)'])).toBe(14);
 			expect(RectangleArea(['(5 5)', '(-5 -5)', '(5 -5)', '(-5 5)'])).toBe(100);
 		});
-
 	});
 
 	describe('distanceFinder', () => {
@@ -16,7 +15,7 @@ describe('RectangleArea', () => {
 		});
 		it('accurately determine distances', () => {
 			expect(distanceFinder('(0, 0)', '(3 4)')).toBe(5);
-			expect(distanceFinder('(0, 0)', '(10 5)')).toBe(125 ** .5);
+			expect(distanceFinder('(0, 0)', '(10 5)')).toBe(125 ** 0.5);
 		});
 	});
 });

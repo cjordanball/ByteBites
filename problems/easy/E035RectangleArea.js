@@ -15,15 +15,18 @@ complex if we provide for the possibility that the rectangle might be rotated of
 y axes on the coordinate plane. Below is the more complete solution. Note, however, that it
 relies on the assumption that the point given do, in fact, define a rectangle.
 */
+const info = {
+	name: 'RectangleArea',
+	number: 35,
+	level: 'easy',
+	methods: ['map()', 'sort()', 'match()'],
+	concepts: []
+};
 
-const name = 'RectangleArea';
-const number = 35;
-const level = 'easy';
-const methods = ['map()', 'sort()', 'match()'];
-const concepts = [];
+let helpers;
 
 const RectangleArea = (strArr) => {
-	let lengthArr = strArr
+	const lengthArr = strArr
 		.map(val => helpers.distanceFinder(val, strArr[0]))
 		.sort((val1, val2) => val1 - val2);
 
@@ -37,11 +40,12 @@ helpers = {
 		const x2 = parseInt(str2.match(/^\((-*\d+)/)[1], 10);
 		const y2 = parseInt(str2.match(/(-*\d+)\)$/)[1], 10);
 
-		return (((x1 - x2) ** 2) + ((y1 - y2) ** 2)) ** 0.5
+		return (((x1 - x2) ** 2) + ((y1 - y2) ** 2)) ** 0.5;
 	}
-}
+};
 
 module.exports = {
 	RectangleArea,
-	helpers
+	helpers,
+	info
 };
