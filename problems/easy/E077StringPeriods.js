@@ -11,11 +11,13 @@ substring. If the input string contains only a single character, your program sh
 the string -1.
 */
 
-const name = ['StringPeriods'];
-const number = 77;
-const level = 'easy';
-const methods = ['Math.max', 'Math.trunc', 'Math.sqrt', '(string).slice', '(string).repeat'];
-const concepts = ['for-loop', 'if-statement'];
+const info = {
+	name: ['StringPeriods'],
+	number: 77,
+	level: 'easy',
+	methods: ['Math.max', 'Math.trunc', 'Math.sqrt', '(string).slice', '(string).repeat'],
+	concepts: ['for-loop', 'if-statement']
+};
 
 const StringPeriods = (str) => {
 	// we will use only lengths of substrings that divide evenly into str
@@ -33,5 +35,6 @@ const StringPeriods = (str) => {
 };
 
 module.exports = {
-	StringPeriods
+	StringPeriods,
+	info
 };
