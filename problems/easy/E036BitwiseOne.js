@@ -18,12 +18,14 @@ introduction as to why that might be a useful thing to know, I recommend "Code: 
 Hidden Language of Computer Hardware and Software", by Charles Petzold.
  */
 
+const info = {
+	name: 'BitwiseOne',
+	number: 36,
+	level: 'easy',
+	methods: [],
+	concepts: []
+};
 
-const name = 'BitwiseOne';
-const number = 36;
-const level = 'easy';
-const methods = [];
-const concepts = [];
 
 const BitwiseOne = (strArr) => {
 	const str1 = strArr[0];
@@ -42,5 +44,6 @@ const BitwiseOne = (strArr) => {
 };
 
 module.exports = {
-	BitwiseOne
+	BitwiseOne,
+	info
 };
