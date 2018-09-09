@@ -9,7 +9,7 @@
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "no-console": ["error", allow: ["log"]],
         "react/jsx-indent-props": [2, 'tab'],
-        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true}],
+        "no-plusplus": ["off", { "allowForLoopAfterthoughts": true}],
         "comma-dangle": ["error", "never"],
         "no-restricted-syntax": ["error"],
         "no-use-before-define": ["error", { "functions": false }],
