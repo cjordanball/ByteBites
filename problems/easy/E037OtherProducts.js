@@ -8,27 +8,29 @@ generate this new array and then return the numbers as a string joined by a hyph
 The array will contain at most 10 elements and at least 1 element of only positive integers.
 */
 
+const info = {
+	name: 'OtherProducts',
+	number: 37,
+	level: 'easy',
+	methods: ['forEach()', 'splice()', 'push()', 'reduce()', 'join()'],
+	concepts: []
+};
 
-const name = 'OtherProducts';
-const number = 37;
-const level = 'easy';
-const methods = ['forEach()', 'splice()', 'push()', 'reduce()', 'join()'];
-const concepts = [];
 
 const OtherProducts = (arr) => {
 	const holdArray = [];
 	if (arr.length === 1) {
 		return '0';
 	}
-
 	arr.forEach((val, ind) => {
 		const arrCopy = Array.from(arr);
 		arrCopy.splice(ind, 1);
 		holdArray.push(arrCopy.reduce((val1, val2) => val1 * val2, 1));
-	})
+	});
 	return holdArray.join('-');
 };
 
 module.exports = {
-	OtherProducts
+	OtherProducts,
+	info
 };
