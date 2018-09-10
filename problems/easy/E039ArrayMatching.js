@@ -15,11 +15,13 @@ expressions to maneuver the given array of strings into an array of arrays. Howe
 is much more easily achieved by using the JSON.parse() method.
 */
 
-const name = 'ArrayMatching';
-const number = 39;
-const level = 'easy';
-const methods = ['map()', 'parse()', 'max()', 'toString()', 'slice()'];
-const concepts = ['template literals', 'for loop', 'if / else if'];
+const info = {
+	name: 'ArrayMatching',
+	number: 39,
+	level: 'easy',
+	methods: ['map()', 'parse()', 'max()', 'toString()', 'slice()'],
+	concepts: ['template literals', 'for loop', 'if / else if']
+};
 
 const ArrayMatching = (arr) => {
 	let resString = '';
@@ -37,5 +39,6 @@ const ArrayMatching = (arr) => {
 };
 
 module.exports = {
-	ArrayMatching
+	ArrayMatching,
+	info
 };
