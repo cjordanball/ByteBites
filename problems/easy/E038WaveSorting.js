@@ -20,11 +20,14 @@ three dots immediately before an array name, and its value is not the array, but
 items in the array. See how it works in the Math.max() method.
  */
 
-const name = 'WaveSorting';
-const number = 38;
-const level = 'easy';
-const methods = ['max()', 'forEach()', 'toString()', 'keys()', 'map()', 'max()'];
-const concepts = ['spread operator'];
+const info = {
+	name: 'WaveSorting',
+	number: 38,
+	level: 'easy',
+	methods: ['max()', 'forEach()', 'toString()', 'keys()', 'map()', 'max()'],
+	concepts: ['spread operator']
+};
+
 let helpers;
 
 const WaveSorting = (arr) => {
@@ -37,7 +40,7 @@ const WaveSorting = (arr) => {
 };
 
 helpers = {
-	// countObj takes an array of items, and returns an object of key/value pairs, the
+	// countObj takes an array of items, and returns an object of key/value pairs,
 	// each key being a value in the array (as a string) and each value being the number
 	// of times that value appears in the array.
 
@@ -50,12 +53,13 @@ helpers = {
 			} else {
 				countObj[valString] += 1;
 			}
-	});
+		});
 		return countObj;
 	}
-}
+};
 
 module.exports = {
 	WaveSorting,
-	helpers
+	helpers,
+	info
 };
