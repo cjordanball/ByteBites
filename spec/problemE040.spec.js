@@ -1,4 +1,4 @@
-const { BinaryReversal } = require('../problems/easy/problemE040');
+const { BinaryReversal } = require('../problems/easy/E040BinaryReversal');
 
 describe('BinaryReversal', () => {
 	it('return the correct string', () => {
