@@ -14,12 +14,13 @@ not "11", but rather is "11000000", since the byte's full representation must in
 leading zeroes.
 */
 
-
-const name = 'BinaryReversal';
-const number = 40;
-const level = 'easy';
-const methods = ['parseInt()', 'toString()', 'split()', 'reverse()', 'join()'];
-const concepts = ['exponential operator', 'binary numbers'];
+const info = {
+	name: 'BinaryReversal',
+	number: 40,
+	level: 'easy',
+	methods: ['parseInt()', 'toString()', 'split()', 'reverse()', 'join()'],
+	concepts: ['exponential operator', 'binary numbers']
+};
 
 const BinaryReversal = (str) => {
 	const biNumString = parseInt(str, 10)
@@ -33,5 +34,6 @@ const BinaryReversal = (str) => {
 };
 
 module.exports = {
-	BinaryReversal
+	BinaryReversal,
+	info
 };
