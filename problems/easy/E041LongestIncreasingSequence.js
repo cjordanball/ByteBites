@@ -17,11 +17,13 @@ combinations, testing each to see if it is an increasing sequence, then returnin
 the longest such sequences.
  */
 
-const name = 'LongestIncreasingSequence';
-const number = 41;
-const level = 'easy';
-const methods = ['toString()', 'slice()', 'split()', 'forEach()', 'push()', 'every()', ];
-const concepts = ['permutations'];
+const info = {
+	name: 'LongestIncreasingSequence',
+	number: 41,
+	level: 'easy',
+	methods: ['toString()', 'slice()', 'split()', 'forEach()', 'push()', 'every()'],
+	concepts: ['permutations']
+};
 let helpers;
 
 const LongestIncreasingSequence = (arr) => {
@@ -36,7 +38,7 @@ const LongestIncreasingSequence = (arr) => {
 				newSeq.push(val);
 			}
 		});
-		if (helpers.isAscending(newSeq)){
+		if (helpers.isAscending(newSeq)) {
 			if (newSeq.length > maxLength) {
 				maxLength = newSeq.length;
 			}
@@ -61,5 +63,6 @@ helpers = {
 
 module.exports = {
 	LongestIncreasingSequence,
-	helpers
+	helpers,
+	info
 };

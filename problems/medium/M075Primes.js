@@ -5,7 +5,7 @@ string false. The range will be between 1 and 2^16.
 */
 
 const info = {
-	name: ['StringPeriods'],
+	name: ['Primes'],
 	number: 75,
 	level: 'medium',
 	methods: ['Math.floor()', 'Math.sqrt()'],
