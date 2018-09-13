@@ -13,18 +13,20 @@ not even digits, so that any even digit connected to another even digit through 
 cause a return of true.
 */
 
-const name = 'EvenPairs';
-const number = 42;
-const level = 'easy';
-const methods = ['test()'];
-const concepts = ['regular expressions'];
+const info = {
+	name: 'EvenPairs',
+	number: 42,
+	level: 'easy',
+	methods: ['test()'],
+	concepts: ['regular expressions']
+};
 
 const EvenPairs = (str) => {
 	const regEx = /[24680]\d*[24680]/;
-
 	return regEx.test(str);
 };
 
 module.exports = {
-	EvenPairs
+	EvenPairs,
+	info
 };
