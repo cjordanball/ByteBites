@@ -1,4 +1,4 @@
-const { EvenPairs } = require('../problems/easy/problemE042');
+const { EvenPairs } = require('../problems/easy/E042EvenPairs');
 
 describe('EvenPairs', () => {
 	it('return the correct string', () => {
