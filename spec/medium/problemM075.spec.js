@@ -1,4 +1,4 @@
-const { Primes } = require('../problems/medium/M075Primes');
+const { Primes } = require('../../problems/medium/M075Primes');
 
 describe('Primes', () => {
 	it('returns a correct answer', () => {

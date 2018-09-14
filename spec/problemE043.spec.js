@@ -1,4 +1,4 @@
-const { NextPalindrome, NextPalindrome2, helpers: { isPalindrome, setNum } } = require('../problems/easy/problemE043');
+const { NextPalindrome, NextPalindrome2, helpers: { isPalindrome, setNum } } = require('../problems/easy/E043NextPalindrome');
 
 describe('NextPalindrome', () => {
 	it('should tell if a number is a palindrome', () => {
@@ -28,6 +28,5 @@ describe('NextPalindrome2', () => {
 		expect(NextPalindrome2(12)).toBe(22);
 		expect(NextPalindrome(5291)).toBe(5335);
 		expect(NextPalindrome2(52491)).toBe(52525);
-		expect()
 	});
 });

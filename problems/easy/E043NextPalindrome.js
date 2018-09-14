@@ -15,27 +15,27 @@ unacceptably long. See if you can think of a better way to accomplish the task, 
 solution with that contained in NextPalindrome2().
  */
 
-const name = 'NextPalindrome';
-const number = 43;
-const level = 'easy';
-const methods = [];
-const concepts = [];
+const info = {
+	name: 'NextPalindrome',
+	number: 43,
+	level: 'easy',
+	methods: [],
+	concepts: []
+};
+
 let helpers;
 
 const NextPalindrome = (num) => {
 	let testNum = num + 1;
-	while(true) {
-		if (helpers.isPalindrome(testNum)) {
-			return testNum;
-		}
+	while (!helpers.isPalindrome(testNum)) {
 		testNum += 1;
 	}
+	return testNum;
 };
 
 helpers = {
 	// isPalindrome takes a number, and returns true if it is a palindrome, and false if it
 	// is not.
-
 	isPalindrome(num) {
 		const str1 = String(num);
 		const str2 = str1
@@ -62,12 +62,12 @@ helpers = {
 		}
 		return returnObj;
 	}
-}
+};
 
 const NextPalindrome2 = (num) => {
 	let numString = String(num);
-	let preNums = [];
-	let postNums = [];
+	const preNums = [];
+	const postNums = [];
 	while (numString.length) {
 		if (numString.length === 1) {
 			return Number(preNums.join('') + numString + postNums.join(''));
@@ -83,5 +83,6 @@ const NextPalindrome2 = (num) => {
 module.exports = {
 	NextPalindrome,
 	NextPalindrome2,
-	helpers
+	helpers,
+	info
 };

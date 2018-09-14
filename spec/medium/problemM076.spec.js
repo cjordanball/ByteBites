@@ -1,4 +1,4 @@
-const { StringCalculate } = require('../problems/medium/M076StringCalculate');
+const { StringCalculate } = require('../../problems/medium/M076StringCalculate');
 
 describe('StringCalculate', () => {
 	it('returns a correct answer', () => {
