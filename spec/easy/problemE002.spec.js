@@ -1,4 +1,4 @@
-const { FirstFactorial, FirstFactorialRec } = require('../problems/easy/E002FirstFactorial');
+const { FirstFactorial, FirstFactorialRec } = require('../../problems/easy/E002FirstFactorial');
 
 describe('FirstFactorial', () => {
 	describe('Iterative', () => {

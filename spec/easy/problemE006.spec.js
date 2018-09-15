@@ -1,4 +1,4 @@
-const { LetterCapitalize } = require('../problems/easy/E006LetterCapitalize');
+const { LetterCapitalize } = require('../../problems/easy/E006LetterCapitalize');
 
 describe('LetterCapitalize', () => {
 	it('should capitalize all the letters of a sentence made of 1 letter words', () => {

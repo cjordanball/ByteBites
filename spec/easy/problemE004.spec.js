@@ -1,4 +1,4 @@
-const { LetterChanges, helpers: { prepare, shifter, capitalizer } } = require('../problems/easy/E004LetterChanges');
+const { LetterChanges, helpers: { prepare, shifter, capitalizer } } = require('../../problems/easy/E004LetterChanges');
 
 describe('LetterChanges', () => {
 	it('should combine the submethods to return the correct total result', () => {

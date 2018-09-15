@@ -5,11 +5,13 @@ example: if num is 4759472 then your program should return 94 because that is th
 double digit number. The input will always contain at least two positive digits.
 */
 
-const name = 'LargestPair';
-const number = 44;
-const level = 'easy';
-const methods = ['split()', 'map()', 'parseInt()', 'max()', 'String()'];
-const concepts = ['for loop'];
+const info = {
+	name: 'LargestPair',
+	number: 44,
+	level: 'easy',
+	methods: ['split()', 'map()', 'parseInt()', 'max()', 'String()'],
+	concepts: ['for loop']
+};
 
 const LargestPair = (num) => {
 	const digitArr = String(num).split('').map(val => parseInt(val, 10));
@@ -23,5 +25,6 @@ const LargestPair = (num) => {
 };
 
 module.exports = {
-	LargestPair
+	LargestPair,
+	info
 };

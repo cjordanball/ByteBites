@@ -1,4 +1,4 @@
-const { VowelCount } = require('../problems/easy/E012VowelCount');
+const { VowelCount } = require('../../problems/easy/E012VowelCount');
 
 describe('VowelCount', () => {
 	it('should find the vowels in a string', () => {

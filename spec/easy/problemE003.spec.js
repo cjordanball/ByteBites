@@ -1,8 +1,8 @@
-const { LongestWord } = require('../problems/easy/E003LongestWord');
+const { LongestWord } = require('../../problems/easy/E003LongestWord');
 
 describe('LongestWord', () => {
 	it('should ignore punctuation', () => {
-		expect(LongestWord('robert and es5@3*%&#t#()')).toBe("robert");
+		expect(LongestWord('robert and es5@3*%&#t#()')).toBe('robert');
 	});
 	it('should return the first longest word if there are', () => {
 		expect(LongestWord('abcdefg is just a word to gfedcb')).toBe('abcdefg');
@@ -12,5 +12,5 @@ describe('LongestWord', () => {
 	});
 	it('should allow hyphens to be in the word', () => {
 		expect(LongestWord('this is incredibly a dilly-dally-Dubai')).toBe('dilly-dally-Dubai');
-	})
+	});
 });

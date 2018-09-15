@@ -1,4 +1,4 @@
-const { CheckNums } = require('../problems/easy/E008CheckNums');
+const { CheckNums } = require('../../problems/easy/E008CheckNums');
 
 describe('CheckNums', () => {
 	it('should return "-1" if the numbers are equal to each other', () => {
