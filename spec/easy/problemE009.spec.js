@@ -1,4 +1,4 @@
-const { TimeConvert } = require('../problems/easy/E009TimeConvert');
+const { TimeConvert } = require('../../problems/easy/E009TimeConvert');
 
 describe('TimeConvert', () => {
 	it('should return "0:0" if input is 0', () => {
