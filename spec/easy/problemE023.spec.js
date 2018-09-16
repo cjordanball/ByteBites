@@ -1,4 +1,4 @@
-const { DashInsert1, DashInsert2 } = require('../problems/easy/E023DashInsert');
+const { DashInsert1, DashInsert2 } = require('../../problems/easy/E023DashInsert');
 
 describe('DashInsert1', () => {
 	it('should insert dashes properly into the number', () => {

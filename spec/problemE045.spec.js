@@ -1,4 +1,4 @@
-const { NonrepeatingCharacter } = require('../problems/easy/problemE045');
+const { NonrepeatingCharacter } = require('../problems/easy/E045NonrepeatingCharacter');
 
 describe('NonrepeatingCharacter', () => {
 	it('looks for the nonrepeting char', () => {

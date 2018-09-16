@@ -1,4 +1,4 @@
-const { OffLineMinimum } = require('../problems/easy/E030OffLineMinimum');
+const { OffLineMinimum } = require('../../problems/easy/E030OffLineMinimum');
 
 describe('OffLineMinimum', () => {
 	it('should correctly handle an array of numbers and Es', () => {

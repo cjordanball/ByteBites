@@ -1,4 +1,4 @@
-const { CountingMinutesI } = require('../problems/easy/E021CountingMinutesI');
+const { CountingMinutesI } = require('../../problems/easy/E021CountingMinutesI');
 
 describe('CountingMinutesI', () => {
 	it('return the time difference in minutes', () => {
