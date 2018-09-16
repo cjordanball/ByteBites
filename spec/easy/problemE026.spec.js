@@ -1,4 +1,4 @@
-const { ThirdGreatest1, ThirdGreatest2 } = require('../problems/easy/E026ThirdGreatest');
+const { ThirdGreatest1, ThirdGreatest2 } = require('../../problems/easy/E026ThirdGreatest');
 
 describe('ThirdGreatest', () => {
 	describe('ThirdGreatest1', () => {

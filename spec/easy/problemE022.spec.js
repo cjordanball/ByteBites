@@ -1,4 +1,4 @@
-const { MeanMode, helpers: { meanTest, modeTest } } = require('../problems/easy/E022MeanMode');
+const { MeanMode, helpers: { meanTest, modeTest } } = require('../../problems/easy/E022MeanMode');
 
 describe('MeanMode', () => {
 	it('should return 1 if mean equals mode and 0 if not', () => {

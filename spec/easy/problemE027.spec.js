@@ -1,4 +1,4 @@
-const { PowersofTwo } = require('../problems/easy/E027PowersofTwo');
+const { PowersofTwo } = require('../../problems/easy/E027PowersofTwo');
 
 describe('PowersofTwo', () => {
 	it('should return false for any number less than two', () => {

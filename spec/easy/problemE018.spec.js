@@ -1,4 +1,4 @@
-const { LetterCountI, helpers: { scoring } } = require('../problems/easy/E018LetterCountI');
+const { LetterCountI, helpers: { scoring } } = require('../../problems/easy/E018LetterCountI');
 
 describe('LetterCountI', () => {
 	describe('scoring', () => {

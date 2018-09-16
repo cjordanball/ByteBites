@@ -1,4 +1,4 @@
-const { MultiplicativePersistence, helpers: { arrayPrep } } = require('../problems/easy/E029MultiplicativePersistence');
+const { MultiplicativePersistence, helpers: { arrayPrep } } = require('../../problems/easy/E029MultiplicativePersistence');
 
 describe('MultiplicativePersistence', () => {
 	describe('ArrayPrep', () => {

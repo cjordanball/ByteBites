@@ -1,4 +1,4 @@
-const { SecondGreatLow } = require('../problems/easy/E019SecondGreatLow');
+const { SecondGreatLow } = require('../../problems/easy/E019SecondGreatLow');
 
 describe('SecondGreatLow', () => {
 	it('should return second lowest and second highest numbers', () => {

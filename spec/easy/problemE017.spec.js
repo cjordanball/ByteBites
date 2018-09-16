@@ -1,4 +1,4 @@
-const { ArrayAdditionI } = require('../problems/easy/E017ArrayAdditionI');
+const { ArrayAdditionI } = require('../../problems/easy/E017ArrayAdditionI');
 
 describe('ArrayAddition', () => {
 	it('should return true if a number combination can add up to the largest number', () => {

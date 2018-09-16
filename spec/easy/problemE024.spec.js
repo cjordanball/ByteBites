@@ -1,4 +1,4 @@
-const { SwapCase } = require('../problems/easy/E024SwapCase');
+const { SwapCase } = require('../../problems/easy/E024SwapCase');
 
 describe('SwapCase', () => {
 	it('should toggle the case of all letters', () => {

@@ -1,4 +1,4 @@
-const { NumberAddition } = require('../problems/easy/E025NumberAddition');
+const { NumberAddition } = require('../../problems/easy/E025NumberAddition');
 
 describe('NumberAddition', () => {
 	it('should add up the numbers contained in a string', () => {
