@@ -1,4 +1,4 @@
-const { HammingDistance1, HammingDistance2 } = require('../problems/easy/E034HammingDistance');
+const { HammingDistance1, HammingDistance2 } = require('../../problems/easy/E034HammingDistance');
 
 describe('HammingDistance1', () => {
 	describe('HammingDistance1', () => {

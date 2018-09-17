@@ -1,4 +1,4 @@
-const { OtherProducts } = require('../problems/easy/E037OtherProducts');
+const { OtherProducts } = require('../../problems/easy/E037OtherProducts');
 
 describe('OtherProducts', () => {
 	it('should do the multiplication thing', () => {

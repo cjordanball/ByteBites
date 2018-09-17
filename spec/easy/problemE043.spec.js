@@ -1,4 +1,4 @@
-const { NextPalindrome, NextPalindrome2, helpers: { isPalindrome, setNum } } = require('../problems/easy/E043NextPalindrome');
+const { NextPalindrome, NextPalindrome2, helpers: { isPalindrome, setNum } } = require('../../problems/easy/E043NextPalindrome');
 
 describe('NextPalindrome', () => {
 	it('should tell if a number is a palindrome', () => {

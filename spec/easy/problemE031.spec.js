@@ -1,4 +1,4 @@
-const { ChangingSequence } = require('../problems/easy/E031ChangingSequence');
+const { ChangingSequence } = require('../../problems/easy/E031ChangingSequence');
 
 describe('ChangingSequence', () => {
 	it('should correctly handle one way sequences', () => {

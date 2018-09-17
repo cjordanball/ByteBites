@@ -1,4 +1,4 @@
-const { WaveSorting, helpers: { frequencyTracker } } = require('../problems/easy/E038WaveSorting');
+const { WaveSorting, helpers: { frequencyTracker } } = require('../../problems/easy/E038WaveSorting');
 
 describe('WaveSorting', () => {
 	describe('FrequencyTracker', () => {
