@@ -25,11 +25,13 @@ millionths of seconds. But, if our array were a million items long, the differen
 between two million operations or half a trillion operations.
 */
 
-const name = 'TwoSum';
-const number = 46;
-const level = 'easy';
-const methods = ['toString()', 'push()', 'join'];
-const concepts = ['ternary operator', 'object properties', 'for loop'];
+const info = {
+	name: 'TwoSum',
+	number: 46,
+	level: 'easy',
+	methods: ['toString()', 'push()', 'join'],
+	concepts: ['ternary operator', 'object properties', 'for loop']
+};
 
 const TwoSum = (arr) => {
 	const len = arr.length;
@@ -54,5 +56,6 @@ const TwoSum = (arr) => {
 };
 
 module.exports = {
-	TwoSum
+	TwoSum,
+	info
 };

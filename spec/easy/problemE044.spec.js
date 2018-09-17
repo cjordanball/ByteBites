@@ -1,4 +1,4 @@
-const { LargestPair } = require('../problems/easy/E044LargestPair');
+const { LargestPair } = require('../../problems/easy/E044LargestPair');
 
 describe('LargestPair', () => {
 	it('return the correct string', () => {

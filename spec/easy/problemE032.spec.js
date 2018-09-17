@@ -1,4 +1,4 @@
-const { OverlappingRanges } = require('../problems/easy/E032OverlappingRanges');
+const { OverlappingRanges } = require('../../problems/easy/E032OverlappingRanges');
 
 describe('OverlappingRanges', () => {
 	it('should correctly evaluate overapping ranges', () => {

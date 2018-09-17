@@ -1,4 +1,4 @@
-const { ArrayMatching } = require('../problems/easy/E039ArrayMatching');
+const { ArrayMatching } = require('../../problems/easy/E039ArrayMatching');
 
 describe('ArrayMatching', () => {
 	it('should add the numbers in two arrays', () => {

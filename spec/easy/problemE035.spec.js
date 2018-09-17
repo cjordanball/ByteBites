@@ -1,4 +1,4 @@
-const { RectangleArea, helpers: { distanceFinder } } = require('../problems/easy/E035RectangleArea');
+const { RectangleArea, helpers: { distanceFinder } } = require('../../problems/easy/E035RectangleArea');
 
 describe('RectangleArea', () => {
 	describe('RectangleArea', () => {

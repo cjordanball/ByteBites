@@ -1,4 +1,4 @@
-const { TwoSum } = require('../problems/easy/problemE046');
+const { TwoSum } = require('../problems/easy/E046TwoSum');
 
 describe('TwoSum', () => {
 	it('finds pairs of numbers with the correct sum', () => {

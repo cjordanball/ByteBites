@@ -1,4 +1,4 @@
-const { LongestIncreasingSequence, helpers: { isAscending } } = require('../problems/easy/E041LongestIncreasingSequence');
+const { LongestIncreasingSequence, helpers: { isAscending } } = require('../../problems/easy/E041LongestIncreasingSequence');
 
 describe('LongestIncreasingSequence', () => {
 	describe('isAscending', () => {

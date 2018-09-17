@@ -1,4 +1,4 @@
-const { BitwiseOne } = require('../problems/easy/E036BitwiseOne');
+const { BitwiseOne } = require('../../problems/easy/E036BitwiseOne');
 
 describe('BitwiseOne', () => {
 	it('should do the bitwise thing', () => {
