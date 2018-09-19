@@ -1,4 +1,4 @@
-const { SimpleEvens } = require('../problems/easy/E069SimpleEvens');
+const { SimpleEvens } = require('../../problems/easy/E069SimpleEvens');
 
 describe('SimpleEvens', () => {
 	it('the correct value for an all even number', () => {

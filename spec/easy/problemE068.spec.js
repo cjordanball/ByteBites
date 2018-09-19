@@ -1,4 +1,4 @@
-const { ASCIIConversion } = require('../problems/easy/E068ASCIIConversion');
+const { ASCIIConversion } = require('../../problems/easy/E068ASCIIConversion');
 
 describe('ASCIIConversion', () => {
 	it('the correct value for \'dog\'', () => {

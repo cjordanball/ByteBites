@@ -1,4 +1,4 @@
-const { NumberStream } = require('../problems/easy/E063NumberStream');
+const { NumberStream } = require('../../problems/easy/E063NumberStream');
 
 describe('NumberStream', () => {
 	it('return an accurate answer', () => {

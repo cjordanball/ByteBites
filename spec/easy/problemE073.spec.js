@@ -1,4 +1,4 @@
-const { OneDecremented } = require('../problems/easy/E073OneDecremented');
+const { OneDecremented } = require('../../problems/easy/E073OneDecremented');
 
 describe('OneDecremented', () => {
 	it('returns a correct answer', () => {

@@ -1,4 +1,4 @@
-const { PowerSetCount } = require('../../problems/easy/problemE048');
+const { PowerSetCount } = require('../../problems/easy/E048PowerSetCount');
 
 describe('PowerSetCount', () => {
 	it('returns the correct value for each input set', () => {

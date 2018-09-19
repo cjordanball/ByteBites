@@ -1,4 +1,4 @@
-const { LargestFour } = require('../problems/easy/E064LargestFour');
+const { LargestFour } = require('../../problems/easy/E064LargestFour');
 
 describe('LargestFour', () => {
 	it('return an accurate answer', () => {

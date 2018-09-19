@@ -1,4 +1,4 @@
-const { QuestionsMarks } = require('../problems/easy/E066QuestionsMarks');
+const { QuestionsMarks } = require('../../problems/easy/E066QuestionsMarks');
 
 describe('QuestionsMarks', () => {
 	it('returns true appropriately', () => {
