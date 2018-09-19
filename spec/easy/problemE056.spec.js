@@ -1,4 +1,4 @@
-const { ThreeNumbers } = require('../problems/easy/E056ThreeNumbers');
+const { ThreeNumbers } = require('../../problems/easy/E056ThreeNumbers');
 
 describe('ThreeNumbers', () => {
 	it('arrives at a solution', () => {

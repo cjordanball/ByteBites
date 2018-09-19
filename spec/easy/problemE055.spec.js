@@ -1,4 +1,4 @@
-const { ScaleBalancing } = require('../problems/easy/E055ScaleBalancing');
+const { ScaleBalancing } = require('../../problems/easy/E055ScaleBalancing');
 
 describe('ScaleBalancing', () => {
 	it('solve a single-weight problem', () => {
