@@ -29,5 +29,6 @@ function PowerSetCount(arr) {
 }
 
 module.exports = {
-	PowerSetCount
+	PowerSetCount,
+	info
 };

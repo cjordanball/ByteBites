@@ -1,4 +1,4 @@
-const { DistinctCharacters } = require('../problems/easy/E065DistinctCharacters');
+const { DistinctCharacters } = require('../../problems/easy/E065DistinctCharacters');
 
 describe('DistinctCharacters', () => {
 	it('returns false if not sufficient', () => {

@@ -1,4 +1,4 @@
-const { ClosestEnemyII, helpers: { rowDist } } = require('../problems/easy/E062ClosestEnemyII');
+const { ClosestEnemyII, helpers: { rowDist } } = require('../../problems/easy/E062ClosestEnemyII');
 
 describe('ClosestEnemyII', () => {
 	describe('rowDist', () => {

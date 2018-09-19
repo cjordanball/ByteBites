@@ -1,4 +1,4 @@
-const { CamelCase } = require('../problems/easy/E067CamelCase');
+const { CamelCase } = require('../../problems/easy/E067CamelCase');
 
 describe('CamelCase', () => {
 	it('returns string in correct camel case', () => {

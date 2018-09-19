@@ -1,4 +1,4 @@
-const { GCF } = require('../problems/easy/E075GCF');
+const { GCF } = require('../../problems/easy/E075GCF');
 
 describe('GCF', () => {
 	it('returns a correct answer for primes', () => {

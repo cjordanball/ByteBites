@@ -1,4 +1,4 @@
-const { ClosestEnemy } = require('../problems/easy/E061ClosestEnemy');
+const { ClosestEnemy } = require('../../problems/easy/E061ClosestEnemy');
 
 describe('ClosestEnemy', () => {
 	it('should correctly identify that there is no 2', () => {

@@ -1,4 +1,4 @@
-const { ElementMerger } = require('../problems/easy/E074ElementMerger');
+const { ElementMerger } = require('../../problems/easy/E074ElementMerger');
 
 describe('ElementMerger', () => {
 	it('returns a correct answer', () => {

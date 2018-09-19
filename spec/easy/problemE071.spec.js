@@ -1,4 +1,4 @@
-const { SumMultiplier } = require('../problems/easy/E071SumMultiplier');
+const { SumMultiplier } = require('../../problems/easy/E071SumMultiplier');
 
 describe('SumMultiplier', () => {
 	it('returns a correct true value', () => {
