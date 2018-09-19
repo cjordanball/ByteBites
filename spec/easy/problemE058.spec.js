@@ -1,4 +1,4 @@
-const { TimeDifference } = require('../problems/easy/E058TimeDifference');
+const { TimeDifference } = require('../../problems/easy/E058TimeDifference');
 
 describe('TimeDifference', () => {
 	it('correctly returns answer', () => {

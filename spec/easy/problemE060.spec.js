@@ -1,4 +1,4 @@
-const { VowelSquare } = require('../problems/easy/E060VowelSquare');
+const { VowelSquare } = require('../../problems/easy/E060VowelSquare');
 
 describe('VowelSquare', () => {
 	it('should correctly identify if a 2x2 square is all vowel', () => {

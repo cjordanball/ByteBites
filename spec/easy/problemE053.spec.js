@@ -1,4 +1,4 @@
-const { ThreeSum } = require('../problems/easy/E053ThreeSum');
+const { ThreeSum } = require('../../problems/easy/E053ThreeSum');
 
 describe('ThreeSum', () => {
 	it('returns a correct answer', () => {
