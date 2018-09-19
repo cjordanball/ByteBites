@@ -1,4 +1,4 @@
-const { AlphabetSearching } = require('../problems/easy/E057AlphabetSearching');
+const { AlphabetSearching } = require('../../problems/easy/E057AlphabetSearching');
 
 describe('AlphabetSearching', () => {
 	it('correctly returns false', () => {

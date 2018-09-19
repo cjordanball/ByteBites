@@ -1,4 +1,4 @@
-const { BitwiseTwo } = require('../problems/easy/problemE047');
+const { BitwiseTwo } = require('../../problems/easy/E047BitwiseTwo');
 
 describe('BitwiseTwo', () => {
 	it('returns the correct value for each input pair', () => {

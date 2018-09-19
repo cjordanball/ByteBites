@@ -6,11 +6,14 @@ strings. A bitwise AND operation places a 1 in the new string where there is a 1
 locations in the binary strings, otherwise it places a 0 in that spot. For example: if strArr
 is ["10111", "01101"] then your program should return the string "00101".
 */
-const name = 'BitwiseTwo';
-const number = 47;
-const level = 'easy';
-const methods = [];
-const concepts = ['for loop', '&& operator', 'string iteration'];
+
+const info = {
+	name: 'BitwiseTwo',
+	number: 47,
+	level: 'easy',
+	methods: [],
+	concepts: ['for loop', '&& operator', 'string iteration']
+};
 
 function BitwiseTwo(strArr) {
 	const num1 = strArr[0];
@@ -29,5 +32,6 @@ function BitwiseTwo(strArr) {
 }
 
 module.exports = {
-	BitwiseTwo
+	BitwiseTwo,
+	info
 };
