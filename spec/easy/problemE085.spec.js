@@ -1,4 +1,4 @@
-const { FizzBuzz } = require('../problems/easy/E085FizzBuzz');
+const { FizzBuzz } = require('../../problems/easy/E085FizzBuzz');
 
 describe('FizzBuzz', () => {
 	it('returns a correct answer', () => {

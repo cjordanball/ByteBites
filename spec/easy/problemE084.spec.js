@@ -1,4 +1,4 @@
-const { StringChanges } = require('../problems/easy/E084StringChanges');
+const { StringChanges } = require('../../problems/easy/E084StringChanges');
 
 describe('AlphabetSearching', () => {
 	it('correctly handles a single character string', () => {

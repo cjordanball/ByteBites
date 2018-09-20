@@ -42,5 +42,6 @@ function ProductDigits(num) {
 }
 
 module.exports = {
-	ProductDigits
+	ProductDigits,
+	info
 };

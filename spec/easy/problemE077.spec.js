@@ -1,4 +1,4 @@
-const { StringPeriods } = require('../problems/easy/E077StringPeriods');
+const { StringPeriods } = require('../../problems/easy/E077StringPeriods');
 
 describe('StringPeriods', () => {
 	it('should return -1 if the the length of the string is 1', () => {

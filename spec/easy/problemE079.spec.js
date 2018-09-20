@@ -1,4 +1,4 @@
-const { RemoveBrackets } = require('../problems/easy/E079RemoveBrackets');
+const { RemoveBrackets } = require('../../problems/easy/E079RemoveBrackets');
 
 describe('RemoveBrackets', () => {
 	it('should return 0', () => {

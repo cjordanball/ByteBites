@@ -1,4 +1,4 @@
-const { CommandLine } = require('../problems/easy/E080CommandLine');
+const { CommandLine } = require('../../problems/easy/E080CommandLine');
 
 describe('CommandLine', () => {
 	it('should return a valid result', () => {

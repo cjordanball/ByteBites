@@ -1,4 +1,4 @@
-const { HDistance } = require('../problems/easy/E086HDistance');
+const { HDistance } = require('../../problems/easy/E086HDistance');
 
 describe('HDistance', () => {
 	it('returns a correct answer', () => {

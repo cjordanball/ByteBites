@@ -6,8 +6,8 @@ should return true. Punctuation and symbols will not be entered with the paramet
 */
 
 const info = {
-	name: '',
-	number: 5,
+	name: 'StringScramble',
+	number: 6,
 	level: 'medium',
 	methods: [],
 	concepts: []

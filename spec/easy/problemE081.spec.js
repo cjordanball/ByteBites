@@ -1,4 +1,4 @@
-const { StarRating } = require('../problems/easy/E081StarRating');
+const { StarRating } = require('../../problems/easy/E081StarRating');
 
 describe('StarRating', () => {
 	it('should return a valid result', () => {

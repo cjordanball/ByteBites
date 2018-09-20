@@ -1,4 +1,4 @@
-const { DifferentCasesI, DifferentCasesII } = require('../problems/easy/E087DifferentCases');
+const { DifferentCasesI, DifferentCasesII } = require('../../problems/easy/E087DifferentCases');
 
 describe('DifferentCasesI', () => {
 	it('returns a correct answer', () => {

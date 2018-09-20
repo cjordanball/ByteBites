@@ -1,4 +1,4 @@
-const { GroupTotals } = require('../problems/easy/E083GroupTotals');
+const { GroupTotals } = require('../../problems/easy/E083GroupTotals');
 
 describe('GroupTotals', () => {
 	it('should return a valid result', () => {

@@ -1,4 +1,4 @@
-const { SerialNumber } = require('../problems/easy/E076SerialNumber');
+const { SerialNumber } = require('../../problems/easy/E076SerialNumber');
 
 describe('SerialNumber', () => {
 	it('should return true for input 224.315.218', () => {

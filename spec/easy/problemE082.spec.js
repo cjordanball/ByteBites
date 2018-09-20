@@ -1,4 +1,4 @@
-const { MovingMedian } = require('../problems/easy/E082MovingMedian');
+const { MovingMedian } = require('../../problems/easy/E082MovingMedian');
 
 describe('MovingMedian', () => {
 	it('should return a valid result', () => {
