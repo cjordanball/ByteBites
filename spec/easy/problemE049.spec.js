@@ -1,4 +1,4 @@
-const { ProductDigits } = require('../../problems/easy/problemE049');
+const { ProductDigits } = require('../../problems/easy/E049ProductDigits');
 
 describe('ProductDigits', () => {
 	it('returns the correct value for each input set', () => {
