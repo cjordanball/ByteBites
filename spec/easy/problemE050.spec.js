@@ -1,4 +1,4 @@
-const { PalindromeCreator } = require('../../problems/easy/problemE050');
+const { PalindromeCreator } = require('../../problems/easy/E050PalindromeCreator');
 
 describe('PalindromeCreator', () => {
 	it('recognizes if the input is a palindrome', () => {
