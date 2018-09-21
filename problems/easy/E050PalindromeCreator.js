@@ -21,8 +21,16 @@ one crawl, but I think it is more efficient to first go through the single chara
 check, then go through the two character removal.
 */
 
-function PalindromeCreator(str) {
-	const helpers = createHelpers();
+const info = {
+	name: 'PalindromeCreator',
+	number: 50,
+	level: 'easy',
+	methods: [],
+	concepts: []
+};
+let helpers;
+
+const PalindromeCreator = (str) => {
 	const len = str.length;
 	// test to see if it is a Palindrome already
 	if (helpers.isPalindrome(str)) {
@@ -51,22 +59,21 @@ function PalindromeCreator(str) {
 		}
 	}
 	return 'not possible';
-}
+};
 
-// ----------------helpers---------------------------
-
-function createHelpers() {
-	return {
-		isPalindrome(str) {
-			const newStr = str.split('').reverse().join('');
-			if (newStr === str) {
-				return true;
-			}
-			return false;
+helpers = {
+	isPalindrome(str) {
+		const newStr = str.split('').reverse().join('');
+		if (newStr === str) {
+			return true;
 		}
-	};
-}
+		return false;
+	}
+};
+
 
 module.exports = {
-	PalindromeCreator
+	PalindromeCreator,
+	helpers,
+	info
 };
