@@ -9,8 +9,15 @@ The goal of your program is to return the decimal equivalent of the Roman numera
 For example: if str is "XXIV" your program should return 24.
 */
 
+const info = {
+	name: 'BasicRomanNumerals',
+	number: 51,
+	level: 'easy',
+	methods: [],
+	concepts: []
+};
 
-function BasicRomanNumerals(str) {
+const BasicRomanNumerals = (str) => {
 	const letterObj = {
 		I: 1,
 		V: 5,
@@ -31,8 +38,9 @@ function BasicRomanNumerals(str) {
 		}
 	}
 	return res;
-}
+};
 
 module.exports = {
-	BasicRomanNumerals
+	BasicRomanNumerals,
+	info
 };

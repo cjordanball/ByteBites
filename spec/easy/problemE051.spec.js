@@ -1,4 +1,4 @@
-const { BasicRomanNumerals } = require('../../problems/easy/problemE051');
+const { BasicRomanNumerals } = require('../../problems/easy/E051BasicRomanNumerals');
 
 describe('BasicRomanNumerals', () => {
 	it('recognizes a basic one character number', () => {
