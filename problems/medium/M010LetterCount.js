@@ -23,7 +23,7 @@ const LetterCount = (str) => {
 	const wordInfo = wordArray.map(val => ({
 		word: val,
 		count: helpers.getMaxCount(val)
-	}));
+	})).sort((val1, val2) => val2.count - val1.count);
 	return wordInfo[0].count === 1 ? -1 : wordInfo[0].word;
 };
 
