@@ -14,7 +14,8 @@
         "no-restricted-syntax": ["error"],
         "no-use-before-define": ["error", { "functions": false }],
         "no-confusing-arrow": ["off", {"allowParens": true}],
-        "no-continue": "off"
+        "no-continue": "off",
+        "arrow-body-style": ["error", "as-needed"]
     },
     "globals": {
         "document": false,
