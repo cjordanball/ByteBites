@@ -5,8 +5,8 @@ is 4546793 the output should be 454*67-9-3. Don't count zero as an odd or even n
 */
 
 const info = {
-	name: 'PrimeChecker',
-	number: 17,
+	name: 'DashInsertII',
+	number: 18,
 	level: 'medium',
 	methods: [],
 	concepts: []
