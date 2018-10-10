@@ -8,7 +8,7 @@ isn't the case, return 0.
 */
 
 const info = {
-	name: ['TripleDouble'],
+	name: 'TripleDouble',
 	number: 21,
 	level: 'medium',
 	methods: [],
