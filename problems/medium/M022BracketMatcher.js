@@ -15,7 +15,6 @@ const info = {
 };
 
 const BracketMatcher = (str) => {
-	// const strArray = str.split('');
 	let counter = 0;
 	for (let i = 0, len = str.length; i < len; i++) {
 		if (str[i] === '(') {
