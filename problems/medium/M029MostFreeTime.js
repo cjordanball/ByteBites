@@ -31,7 +31,6 @@ const MostFreeTime = (strArr) => {
 			.split('-')
 			.map(subVal => parseInt(subVal, 10))
 		);
-	console.log('asa: ', adjustedStrArr);
 
 	const len = strArr.length;
 	let counter = 0;
@@ -55,7 +54,6 @@ helpers = {
 			const hour = parseInt(val.slice(0, 2).replace('12', '00'), 10);
 			const remainingTimeString = val.slice(2);
 			const newHour = (hour + 12).toString();
-			console.log('newHour: ', newHour);
 			return `${newHour}${remainingTimeString}`.slice(0, 5);
 		});
 		const minuteTimeString = militaryTimeArray.map((val) => {
