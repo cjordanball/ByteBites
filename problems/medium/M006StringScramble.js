@@ -35,7 +35,6 @@ const StringScramble = (str1, str2) => {
 			j++;
 		}
 	}
-	console.log(arr2);
 	return arr2.length === 0;
 };
 
