@@ -8,7 +8,7 @@ smaller.
 
 const info = {
 	name: 'StockPicker',
-	number: 34,
+	number: 35,
 	level: 'medium',
 	methods: [],
 	concepts: []
