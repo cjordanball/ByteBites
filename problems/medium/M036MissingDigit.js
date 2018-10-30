@@ -8,6 +8,11 @@ numbers and all three numbers will be greater than or equal to 0 and less than o
 1000000.
 */
 
+/*
+The solution below is sort of a "wise-guy" approach, and is based on the fact that there are only
+ten possible solutions, so we can just try them all out and return the one that works.
+*/
+
 const info = {
 	name: 'MissingDigit',
 	number: 36,
@@ -18,13 +23,11 @@ const info = {
 
 const MissingDigit = (str) => {
 	for (let i = 0; i < 10; i++) {
-		const newString = str.replace(/x/, i.toString())
-			.replace(/=/, '===');
+		const newString = str.replace(/x/, i.toString()).replace(/=/, '===');
 		if (eval(newString)) {
 			return i;
 		}
 	}
-
 	return 'failed';
 };
 
