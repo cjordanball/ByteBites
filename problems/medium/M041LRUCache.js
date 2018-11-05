@@ -27,8 +27,8 @@ const info = {
 	name: 'LRUCache',
 	number: 41,
 	level: 'medium',
-	methods: [],
-	concepts: []
+	methods: ['push()'],
+	concepts: ['return value of push']
 };
 
 const LRUCache = (strArr) => {
