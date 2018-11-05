@@ -15,14 +15,14 @@ for in the tree will exist somewhere in the tree.
 */
 
 const info = {
-	name: 'BinarySearchTreeLCA',
+	name: 'BinaryTreeLCA',
 	number: 40,
 	level: 'medium',
 	methods: [],
 	concepts: []
 };
 
-const BinarySearchTreeLCA = (strArr) => {
+const BinaryTreeLCA = (strArr) => {
     // take the first item in the argument array and turn it into an array of integers
 	const nodeArray = strArr[0]
         .replace(/[[]]/g, '')
@@ -53,6 +53,6 @@ const BinarySearchTreeLCA = (strArr) => {
 };
 
 module.exports = {
-	BinarySearchTreeLCA,
+	BinaryTreeLCA,
 	info
 };
