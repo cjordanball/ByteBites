@@ -21,22 +21,22 @@ const info = {
 	concepts: ['']
 };
 let helpers;
-let len;
-let height;
-const holderArr = [];
 
 const MatrixSpiral = (strArr) => {
-	len = strArr[0].length;
-	height = strArr.length;
-	const copyArr = helpers.prep(Array.from(strArr));
+	let dataObject = {
+		len: strArr[0].length,
+		height: strArr.length,
+		copyArr: helpers.prep(Array.from(strArr)),
+		holderArr: []
+	};
 
-	while (len > 0 && height > 0) {
-		helpers.removeTop(copyArr);
-		helpers.removeRight(copyArr);
-		helpers.removeBottom(copyArr);
-		helpers.removeLeft(copyArr);
+	while (dataObject.len > 0 && dataObject.height > 0) {
+		dataObject = helpers.removeTop(dataObject);
+		dataObject = helpers.removeRight(dataObject);
+		dataObject = helpers.removeBottom(dataObject);
+		dataObject = helpers.removeLeft(dataObject);
 	}
-	return holderArr.join(',');
+	return dataObject.holderArr.join(',');
 // 	return `len: ${len} and height: ${height}`;
 };
 
@@ -51,35 +51,50 @@ helpers = {
 			.map(item => item
 			.map(numStr => parseInt(numStr, 10)));
 	},
-	removeTop(arr) {
-		if (height > 0 && len > 0) {
-			height -= 1;
-			holderArr.push(...arr.shift());
+	// removeTop takes our dataObject, removes the top of the matrix and places the
+	// items into the holder Array.  Then it creates and returns a copy of the dataObject.
+	removeTop(obj) {
+		if (obj.height > 0 && obj.len > 0) {
+			obj.height -= 1;
+			obj.holderArr.push(...obj.copyArr.shift());
 		}
+		return Object.assign({}, obj);
 	},
-	removeRight(arr) {
-		if (height > 0 && len > 0) {
-			len -= 1;
-			arr.forEach((row) => {
-				holderArr.push(row.pop());
+	// removeRight takes our dataObject, removes the items in the right column of the matrix
+	// and places the items into the holder Array.  Then it creates and returns a copy of the
+	// dataObject.
+	removeRight(obj) {
+		if (obj.height > 0 && obj.len > 0) {
+			obj.len -= 1;
+			obj.copyArr.forEach((row) => {
+				obj.holderArr.push(row.pop());
 			});
 		}
+		return Object.assign({}, obj);
 	},
-	removeBottom(arr) {
-		if (height > 0 && len > 0) {
-			height -= 1;
-			holderArr.push(...(arr.pop().reverse()));
+	// removeBottom takes our dataObject, removes the bottom of the matrix and places the
+	// items, in reverse order into the holder Array.  Then it creates and returns a copy
+	// of the dataObject.
+	removeBottom(obj) {
+		if (obj.height > 0 && obj.len > 0) {
+			obj.height -= 1;
+			obj.holderArr.push(...(obj.copyArr.pop().reverse()));
 		}
+		return Object.assign({}, obj);
 	},
-	removeLeft(arr) {
-		if (height > 0 && len > 0) {
-			len -= 1;
+	// removeLeft takes our dataObject, removes the items in the right column of the
+	// matrix and places the items into the holder Array, in reverse order.  Then it
+	// creates and returns a copy of the dataObject.
+	removeLeft(obj) {
+		if (obj.height > 0 && obj.len > 0) {
+			obj.len -= 1;
 			const holdingArray = [];
-			arr.forEach((row) => {
+			obj.copyArr.forEach((row) => {
 				holdingArray.push(row.shift());
 			});
-			holderArr.push(...(holdingArray.reverse()));
+			obj.holderArr.push(...(holdingArray.reverse()));
 		}
+		return Object.assign({}, obj);
 	}
 };
 
