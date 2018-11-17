@@ -16,7 +16,7 @@ be the longest substring, thus saving wasted time going through shorter substrin
 
 const info = {
 	name: 'MissingDigitII',
-	number: 50,
+	number: 51,
 	level: 'medium',
 	methods: [''],
 	concepts: ['']
