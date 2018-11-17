@@ -16,7 +16,7 @@ of water that can be held, and return that amount.
 
 const info = {
 	name: 'MissingDigitII',
-	number: 50,
+	number: 52,
 	level: 'medium',
 	methods: [''],
 	concepts: ['']
