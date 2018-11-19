@@ -15,8 +15,8 @@
  */
 
 const info = {
-	name: 'SeatingStudents',
-	number: 54,
+	name: 'LongestMatrixPath',
+	number: 55,
 	level: 'medium',
 	methods: [''],
 	concepts: ['']
