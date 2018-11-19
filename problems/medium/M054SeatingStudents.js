@@ -36,7 +36,6 @@ const SeatingStudents = (arr) => {
 	const occupied = arr.slice(1);
 	let counter = 0;
 	for (let i = 1; i <= numSeats; i++) {
-		console.log(counter);
 		if (!occupied.includes(i)) {
 			if (!occupied.includes(i - 2) && i > 2) {
 				counter++;
