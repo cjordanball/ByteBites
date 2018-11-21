@@ -13,7 +13,6 @@ multiplications. Your program should therefore return 18 because the second orde
 more multiplications. The input array will contain between 3 and 30 elements.
 */
 
-
 const info = {
 	name: 'MatrixChains',
 	number: 57,
@@ -33,7 +32,6 @@ const MatrixChains = (arr) => {
 			index = i;
 		}
 	}
-	console.log('index', index);
 	// multiply to the right from the index, to extent possible
 	helpers.moveRight(index, newArr);
 	// multiply to the left from the index, to extent possible
@@ -49,7 +47,6 @@ const MatrixChains = (arr) => {
 Object.assign(helpers, {
 	// takes the smallest value and multiplies arrays going righttward
 	moveRight(index, newArr) {
-		console.log('right');
 		let move = newArr.length - index > 2;
 		while (move) {
 			counter += newArr[index] * newArr[index + 1] * newArr[index + 2];
@@ -62,7 +59,6 @@ Object.assign(helpers, {
 	// takes the smallest value and multiplies going leftward
 	moveLeft(index, newArr) {
 		let indexCopy = 1;
-		console.log('left', index);
 		let move = index > 1;
 		while (move) {
 			counter += newArr[indexCopy] * newArr[indexCopy - 1] * newArr[indexCopy - 2];
@@ -74,33 +70,6 @@ Object.assign(helpers, {
 		}
 	}
 });
-	// //------------------- helpers -----------------------------------
-	// //takes the smallest value and multiplies arrays going righttward
-	// function moveRight(index) {
-	// 	console.log('right');
-	// 	let move = newArr.length - index > 2;
-	// 	while(move) {
-	// 		counter += newArr[index] * newArr[index + 1] * newArr[index + 2];
-	// 		newArr.splice(index + 1, 1);
-	// 		if (newArr.length - index === 2) {
-	// 			move = false;
-	// 		}
-	// 	}
-	// }
-	// //takes the smallest value and multiplies going leftward
-	// function moveLeft(index, newArr) {
-	// 	console.log('left', index);
-	// 	let move = index > 1;
-	// 	while(move) {
-	// 		counter += newArr[index] * newArr[index - 1] * newArr[index - 2];
-	// 		newArr.splice(index - 1, 1);
-	// 		index--;
-	// 		if (newArr.length === 3) {
-	// 			move = false;
-	// 		}
-	// 	}
-	// }
-// }
 
 module.exports = {
 	MatrixChains,
