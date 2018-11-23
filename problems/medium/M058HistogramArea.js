@@ -17,8 +17,8 @@ is 3, therefore 2 * 3 = 6. Your program should return 6. The array will always c
 */
 
 const info = {
-	name: 'MatrixChains',
-	number: 57,
+	name: 'HistogramArea',
+	number: 58,
 	level: 'medium',
 	methods: [''],
 	concepts: ['']
