@@ -12,16 +12,13 @@ const info = {
 	number: 62,
 	level: 'medium',
 	methods: [''],
-	concepts: ['']
+	concepts: ['regular expressions']
 };
 
 const FormattedNumber = (strArr) => {
 	const strNum = strArr[0];
 	const hasDecimal = strNum.includes('.');
-	console.log(hasDecimal);
-
 	const pattern = hasDecimal ? /^(?:\d{0,3})(?:,\d{3})*\.\d*$/ : /^(?:\d{0,3})(?:,\d{3})*$/;
-
 	return pattern.test(strNum);
 };
 
