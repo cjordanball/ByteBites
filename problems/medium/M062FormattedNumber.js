@@ -16,10 +16,53 @@ const info = {
 };
 
 const FormattedNumber = (strArr) => {
-	return strArr[0];
+	const strNum = strArr[0];
+	const hasDecimal = strNum.includes('.');
+	console.log(hasDecimal);
+
+	const pattern = hasDecimal ? /^(?:\d{0,3})(?:,\d{3})*\.\d*$/ : /^(?:\d{0,3})(?:,\d{3})*$/;
+
+	return pattern.test(strNum);
 };
 
 module.exports = {
 	FormattedNumber,
 	info
 };
+
+
+// function FormattedNumber(strArr){
+// 	let left, right;
+// 	let num = strArr[0];
+// 	//make sure there are only digits, periods, and commas
+// 	if (!/^[\d\.,]+$/.test(num)) {
+// 		return 'false';
+// 	}
+// 	//split into two pieces for evaluation
+// 	if (num.includes('.')) {
+// 		//throw out if more than one decimal
+// 		if (num.match(/\./g).length > 1) {
+// 			return 'false';
+// 		}
+// 		let pieces = num.split(".");
+// 		left = pieces[0];
+// 		right = pieces[1];
+// 		//throw out if there is a nondigit right of the decimal
+// 		if (/\D/.test(right)) {
+// 			return 'false';
+// 		}
+// 	} else {
+// 		left = num;
+// 	}
+// 	//reverse the left of the array and check the comma placement
+// 	left = left.split('').reverse();
+// 	for (let i = 0, len = left.length; i < len; i++) {
+// 		if (i % 4 === 3 && left[i] !== ',') {
+// 			return 'false';
+// 		} else if (i % 4 !== 3 && !/\d/.test(left[i])) {
+// 			return 'false';
+// 		}
+// 	}
+//
+// 	return 'true';
+// }
