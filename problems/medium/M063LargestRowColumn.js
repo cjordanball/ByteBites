@@ -22,8 +22,6 @@ you would get 15 which is larger than 12, but row 1, column 5 is out of bounds. 
 possible with the current matrix to sum to any of the following numbers: 20, 21, 22. If you
 find a sum that is only a single digit, you can treat that as row 0, column N where N is
 your sum.
-
-Use the Parameter Testing feature in the box below to test your code with different arguments.
 */
 
 const info = {
