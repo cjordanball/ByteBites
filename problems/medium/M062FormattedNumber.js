@@ -16,10 +16,8 @@ const info = {
 };
 
 const FormattedNumber = (strArr) => {
-	const strNum = strArr[0];
-	const hasDecimal = strNum.includes('.');
-	const pattern = hasDecimal ? /^(?:\d{0,3})(?:,\d{3})*\.\d*$/ : /^(?:\d{0,3})(?:,\d{3})*$/;
-	return pattern.test(strNum);
+	const pattern = /^(?:\d{0,3})(?:,\d{3})*(?:\.\d*)?$/;
+	return pattern.test(strArr[0]);
 };
 
 module.exports = {
