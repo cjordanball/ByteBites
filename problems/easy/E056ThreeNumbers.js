@@ -19,7 +19,7 @@ const info = {
 function ThreeNumbers(str) {
 	const wordArr = str.split(' ');
 
-	return wordArr.every((val) => {
+	const result = wordArr.every((val) => {
 		// return false if three numbers in a row
 		if (/\d\d\d/.test(val)) {
 			return false;
@@ -36,8 +36,10 @@ function ThreeNumbers(str) {
 		}
 		return true;
 	});
+	return result ? 'true' : 'false';
 }
 
 module.exports = {
-	ThreeNumbers
+	ThreeNumbers,
+	info
 };
