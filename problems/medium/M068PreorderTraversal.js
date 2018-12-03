@@ -23,11 +23,66 @@ const info = {
 	concepts: ['']
 };
 
+const helpers = {};
 const PreorderTraversal = (strArr) => {
-	return strArr;
+	const newArr = Array.from(strArr);
+	const fullArray = helpers.createFullArray(newArr);
+	return fullArray;
 };
 
+Object.assign(helpers, {
+	holderArray: [],
+	createFullArray(arr) {
+		return arr.length;
+	},
+	createString(arr) {
+		const preppedArr = helpers.setSubArrays(arr);
+		console.log('pA: ', preppedArr);
+		if (preppedArr[0][0] === '#') {
+			return;
+		}
+		if (arr.length === 1) {
+			helpers.holderArray.push(...(preppedArr[0]));
+		} else {
+			helpers.holderArray.push(preppedArr.splice(0, 1));
+			const sides = helpers.splitArrays(preppedArr);
+			console.log('sides: ', sides[0]);
+			console.log('sides2: ', sides[1]);
+			helpers.createString(sides[0]);
+			helpers.createString(sides[1]);
+		}
+		return helpers.holderArray;
+	},
+	// takes an array of 2^n items and places them in n subarrays, each of length 2^index,
+	// where index is the index of the subarray within the array.
+	setSubArrays(arr) {
+		const resArray = [];
+		let power = 0;
+		while (arr.length > 0) {
+			const newArr = arr.splice(0, 2 ** power);
+			resArray.push(newArr);
+			power++;
+		}
+		return resArray;
+	},
+	// splitArrays takes the array representing the full binary tree and returns two arrays,
+	// the left half and the right half under the top
+	splitArrays(arr) {
+		const rightArray = [];
+		const leftArray = [];
+		arr.forEach((subArr) => {
+			const len = subArr.length;
+			if (len > 1) {
+				leftArray.push((subArr.splice(0, len / 2)));
+				rightArray.push(subArr);
+			}
+		});
+		return [leftArray, rightArray];
+	}
+});
+
 module.exports = {
-	info,
-	PreorderTraversal
+	PreorderTraversal,
+	helpers,
+	info
 };
