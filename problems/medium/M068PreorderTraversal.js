@@ -32,39 +32,59 @@ const PreorderTraversal = (strArr) => {
 
 Object.assign(helpers, {
 	holderArray: [],
+	// createFullArray takes the array in the format presented, and adds hash marks to fill
+	// out the array, so that a tree that is n levels deep will be represented by an array
+	// of 2^n - 1 items.
 	createFullArray(arr) {
-		return arr.length;
-	},
-	createString(arr) {
-		const preppedArr = helpers.setSubArrays(arr);
-		console.log('pA: ', preppedArr);
-		if (preppedArr[0][0] === '#') {
-			return;
+		const workArray = Array.from(arr);
+		const returnArray = [];
+		let checker = false;
+		let pow = 0;
+		while (!checker) {
+			const items = workArray.splice(0, (2 ** pow));
+			items.forEach((val, index) => {
+				if (val === '#') {
+					workArray.splice(index * 2, 0, '#', '#');
+				}
+			});
+			returnArray.push(...items);
+			console.log('wA: ', workArray);
+			pow++;
+			checker = workArray.every(val => val === '#');
 		}
-		if (arr.length === 1) {
-			helpers.holderArray.push(...(preppedArr[0]));
-		} else {
-			helpers.holderArray.push(preppedArr.splice(0, 1));
-			const sides = helpers.splitArrays(preppedArr);
-			console.log('sides: ', sides[0]);
-			console.log('sides2: ', sides[1]);
-			helpers.createString(sides[0]);
-			helpers.createString(sides[1]);
-		}
-		return helpers.holderArray;
+		return returnArray;
 	},
+
+	// createString(arr) {
+	// 	const preppedArr = helpers.setSubArrays(arr);
+	// 	console.log('pA: ', preppedArr);
+	// 	if (preppedArr[0][0] === '#') {
+	// 		return;
+	// 	}
+	// 	if (arr.length === 1) {
+	// 		helpers.holderArray.push(...(preppedArr[0]));
+	// 	} else {
+	// 		helpers.holderArray.push(preppedArr.splice(0, 1));
+	// 		const sides = helpers.splitArrays(preppedArr);
+	// 		console.log('sides: ', sides[0]);
+	// 		console.log('sides2: ', sides[1]);
+	// 		helpers.createString(sides[0]);
+	// 		helpers.createString(sides[1]);
+	// 	}
+	// 	return helpers.holderArray;
+	// },
 	// takes an array of 2^n items and places them in n subarrays, each of length 2^index,
 	// where index is the index of the subarray within the array.
-	setSubArrays(arr) {
-		const resArray = [];
-		let power = 0;
-		while (arr.length > 0) {
-			const newArr = arr.splice(0, 2 ** power);
-			resArray.push(newArr);
-			power++;
-		}
-		return resArray;
-	},
+	// setSubArrays(arr) {
+	// 	const resArray = [];
+	// 	let power = 0;
+	// 	while (arr.length > 0) {
+	// 		const newArr = arr.splice(0, 2 ** power);
+	// 		resArray.push(newArr);
+	// 		power++;
+	// 	}
+	// 	return resArray;
+	// },
 	// splitArrays takes the array representing the full binary tree and returns two arrays,
 	// the left half and the right half under the top
 	splitArrays(arr) {
