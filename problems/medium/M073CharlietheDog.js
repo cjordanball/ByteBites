@@ -14,8 +14,8 @@ between 1 and 8 pieces of food.
 */
 
 const info = {
-	name: 'StringExpression',
-	number: 72,
+	name: 'CharlietheDog',
+	number: 73,
 	level: 'medium',
 	methods: [],
 	concepts: []
