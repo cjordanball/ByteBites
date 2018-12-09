@@ -1,6 +1,6 @@
-const { PreorderTraversal, helpers: { createFullArray, createString, setSubArrays, splitArrays } } = require('../../problems/medium/M068PreorderTraversal');
+const { PreorderTraversal, helpers: { createFullArray, orderArray, setSubArrays, splitArrays } } = require('../../problems/medium/M068PreorderTraversal');
 
-describe('createFullArray', () => {
+xdescribe('createFullArray', () => {
 	it('returns the correct value for miss 1', () => {
 		expect(createFullArray(['5', '2', '6', '1', '9', '#', '8', '#', '#', '#', '#', '4', '#'])).toEqual(['5', '2', '6', '1', '9', '#', '8', '#', '#', '#', '#', '#', '#', '4', '#']);
 	});
@@ -9,9 +9,13 @@ describe('createFullArray', () => {
 	});
 });
 
-xdescribe('createString', () => {
-	it('returns the correct string, given full Arrayu', () => {
-		expect(createString(['5', '2', '6', '1', '9', '#', '8', '#', '#', '#', '#', '#', '#', '4', '#'])).toEqual('5 2 1 9 6 8 4');
+xdescribe('orderArray', () => {
+	it('returns the correct string from a single item array', () => {
+		expect(orderArray([['5']])).toEqual(['5']);
+	});
+	it('returns the correct string, given full Array', () => {
+		expect(orderArray([['5'], ['2', '6'], ['1', '9', '#', '8'], ['#', '#', '#', '#', '#', '#', '4', '#']], []))
+		.toEqual(['5', '2', '1', '#', '#', '9', '#', '#', '6', '#', '#', '#', '8', '4', '#']);
 	});
 });
 
@@ -30,14 +34,20 @@ xdescribe('setSubArrays', () => {
 	});
 });
 
-xdescribe('PreorderTraversal', () => {
-	it('returns the correct value for miss 1', () => {
+describe('PreorderTraversal', () => {
+	it('returns the correct value for long', () => {
 		expect(PreorderTraversal(['5', '2', '6', '1', '9', '#', '8', '2', '12', '#', '#', '#', '#', '#', '99'])).toBe('5 2 1 2 12 9 6 8 99');
 	});
 });
 
 xdescribe('PreorderTraversal', () => {
-	it('returns the correct value for miss 1', () => {
-		expect(PreorderTraversal(['1', '#', '2', '#', '#', '#', '3'])).toBe('1 2 3');
+	it('returns the correct value for short', () => {
+		expect(PreorderTraversal(['1', '#', '2', '#', '3'])).toBe('1 2 3');
+	});
+});
+
+xdescribe('PreorderTraversal', () => {
+	it('returns the correct value for short', () => {
+		expect(PreorderTraversal(['5', '2', '6', '1', '9', '#', '8', '#', '#', '#', '#', '4', '#'])).toBe('5 2 1 9 6 8 4');
 	});
 });
