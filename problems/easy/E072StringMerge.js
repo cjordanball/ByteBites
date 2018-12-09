@@ -16,8 +16,9 @@ const info = {
 };
 
 const StringMerge = (str) => {
+	const cleanString = str.replace(/[^\w*]/g, '');
+	const len = (cleanString.length - 1) / 2;
 	let newString = '';
-	const len = (str.length - 1) / 2;
 	const arr = str.split('*');
 
 	for (let i = 0; i < len; i++) {

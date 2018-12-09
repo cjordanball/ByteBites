@@ -16,7 +16,7 @@ string true, otherwise your program should return the string false. For example:
 const info = {
 	name: 'SimplePassword',
 	number: 67,
-	level: '',
+	level: 'medium',
 	methods: [''],
 	concepts: ['regular expressions']
 };

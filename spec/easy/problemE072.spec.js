@@ -4,4 +4,7 @@ describe('StringMerge', () => {
 	it('returns a correct true value', () => {
 		expect(StringMerge('abc1*kyoo')).toBe('akbyco1o');
 	});
+	it('returns a correct true value', () => {
+		expect(StringMerge('bbb*bbb^')).toBe('bbbbbb');
+	});
 });
