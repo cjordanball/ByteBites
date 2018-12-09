@@ -27,13 +27,9 @@ const helpers = {};
 const PreorderTraversal = (strArr) => {
 	const newArr = Array.from(strArr);
 	const fullArray = helpers.createFullArray(newArr);
-	console.log('fullArray: ', fullArray);
 	const preppedArray = helpers.setSubArrays(fullArray);
-	console.log('prepped: ', preppedArray);
 	const resultArray = helpers.orderArray(preppedArray);
-	console.log('res: ', resultArray);
 	const filteredArray = resultArray.filter(val => val !== '#');
-	console.log('filtered: ', filteredArray);
 	return filteredArray.join(' ');
 
 	// return helpers.orderArray(preppedArray)
@@ -107,7 +103,7 @@ Object.assign(helpers, {
 	isFullGraph(arr) {
 		const arrLength = arr.length;
 		for (let i = 1; i < 50; i++) {
-			if (arrLength === Math.pow(2, i) - 1) {
+			if (arrLength === (2 ** i) - 1) {
 				return true;
 			}
 		}
