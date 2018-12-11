@@ -4,7 +4,7 @@
   "description": "All CoderByte problems, with solutions",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node problems spec --autotest --color"
+    "test": "jasmine-node problems/hard spec --autotest --color"
   },
   "repository": {
     "type": "git",

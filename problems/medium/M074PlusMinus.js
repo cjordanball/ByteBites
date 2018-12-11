@@ -24,7 +24,6 @@ const PlusMinus = (num) => {
 		return '-+--';
 	}
 	helpers.digitsArray = num.toString(10).split('');
-	console.log(helpers.digitsArray);
 	const numSigns = helpers.digitsArray.length - 1;
 	const perms = 2 ** numSigns;
 	for (let i = perms, top = (2 * perms); i < top; i++) {
