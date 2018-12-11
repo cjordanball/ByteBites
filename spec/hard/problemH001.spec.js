@@ -13,7 +13,3 @@ describe('SudokuQuadrantChecker', () => {
 			'(x,x,x,x,x,x,x,x,x)', '(x,x,x,x,x,x,x,x,9)'])).toBe('3,4,5,9');
 	});
 });
-
-describe('SudokuQuadrantChecker', () => {
-
-});

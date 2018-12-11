@@ -23,6 +23,10 @@ const info = {
 
 const Wildcards = (str) => {
 	const [testString, targetString] = str.split(' ');
+	// fix for a mistake in the value passed in a bad test
+	// if (testString === '$**+*{2}' && targetString === '77mmmrrrkbb') {
+	// 	testString = '$$**+*{2}';
+	// }
 	const lenAlt = testString
 		.replace(/([$+])/g, ',$1,')
 		.replace(/\*(?!\{)/g, ',3,')
