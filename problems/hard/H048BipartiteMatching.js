@@ -15,55 +15,72 @@ least 1 edge connecting 2 nodes.
 */
 
 const info = {
-	name: 'SudokuQuadrantChecker',
-	number: 1,
+	name: 'BipartiteMatching',
+	number: 48,
 	level: 'hard',
 	methods: [],
 	concepts: []
 };
 
+const helpers = {};
+
 const BipartiteMatching = (strArr) => {
-	const matches = {};
-	strArr.forEach((val) => {
-		const stringMatch = val.match(/^(\w).*(\w)$/);
-		if (matches[stringMatch[1]]) {
-			matches[stringMatch[1]].push(stringMatch[2]);
-		} else {
-			matches[stringMatch[1]] = [stringMatch[2]];
-		}
-	});
-	let keysArr = Object.keys(matches)
-		.sort((val1, val2) => matches[val2].length - matches[val1].length);
+	const matches = helpers.prepMatchObject(strArr);
+	let keysArr = helpers.createKeysArray(matches);
 	let counter = 0;
 	let myCount = 0;
 
 	while (keysArr.length && myCount < 20) {
-		let hotKey = keysArr.pop();
-		let hotVal = matches[hotKey][0];
-		console.log('hk: ', hotKey);
-		console.log('hV: ', hotVal);
+		const hotKey = keysArr.pop();
+		const hotVal = matches[hotKey][0];
 		// break;
 		if (hotVal) {
 			counter++;
+			const newKeysArr = Array.from(keysArr);
 			keysArr.forEach((val, ind) => {
 				if (matches[val].includes(hotVal)) {
 					if (matches[val].length === 1) {
-						console.log('val: ', val);
 						delete matches[val];
-						keysArr.splice(ind, 1);
+						newKeysArr[ind] = null;
 					} else {
 						const hotIndex = matches[val].findIndex(item => item === hotVal);
 						matches[val].splice(hotIndex, 1);
 					}
 				}
 			});
-			console.log('KA: ', keysArr);
+			keysArr = newKeysArr.filter(val => val);
 			keysArr.sort((val1, val2) => matches[val2].length - matches[val1].length);
 		}
-		myCount++
+		myCount++;
 	}
-	console.log(keysArr);
 	return counter;
 };
 
-console.log(BipartiteMatching(['a->w', 'a->x', 'b->y', 'c->y', 'd->z', 'd->r', 'e->z', 'f->y']));
+Object.assign(helpers, {
+	// prepMatchObject takes the string array input and returns an object, with the keys
+	// being the left group items and the values being arrays of the right group items.
+	prepMatchObject(strArr) {
+		const matches = {};
+		strArr.forEach((val) => {
+			const stringMatch = val.match(/^(\w).*(\w)$/);
+			if (matches[stringMatch[1]]) {
+				matches[stringMatch[1]].push(stringMatch[2]);
+			} else {
+				matches[stringMatch[1]] = [stringMatch[2]];
+			}
+		});
+		return matches;
+	},
+	// createKeysArray takes the matches object and returns a sorted array of the matches
+	// object keys, sorted based on the length of the value array, in descending order.
+	createKeysArray(matches) {
+		return Object.keys(matches)
+			.sort((val1, val2) => matches[val2].length - matches[val1].length);
+	}
+});
+
+module.exports = {
+	BipartiteMatching,
+	helpers,
+	info
+};
