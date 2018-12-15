@@ -15,11 +15,17 @@ const info = {
 	concepts: []
 };
 
-function ConvexHullPoints(strArr) {
-    //convert the array into an array of x-y cordinates
-    let formattedArray = strArr.map(val => {
-        return helpers.formatter(val);
-    });
+const helpers = {};
+
+const ConvexHullPoints = (strArr) => {
+	// convert the array into an array of x-y cordinates
+	const formattedArray = strArr.map(val => helpers.formatter(val));
+
+	// find the leftmost point
+	const leftPoint = formattedArray.sort((val1, val2) => val1[0] - val2[0])[0];
+	console.log('FA: ', formattedArray);
+	console.log('lp: ', leftPoint);
+
     let triangles = helpers.getComboList(3, formattedArray.length)
         .map((val) => {
             return val.map(point => {
@@ -32,13 +38,13 @@ function ConvexHullPoints(strArr) {
 
 }
 
-const helpers = {
-    //formatter takes the input and converts it to an array of cartesian points
-    formatter(str) {
-        const matcher = /^\(([-+]?\d+),([-+]?\d+)\)$/;
-        const myMatch = str.match(matcher);
-        return [parseFloat(myMatch[1]), parseFloat(myMatch[2])];
-    },
+Object.assign(helpers, {
+	// formatter takes the input and converts it to an array of cartesian points
+	formatter(str) {
+		const matcher = /^\(([-+]?\d+),([-+]?\d+)\)$/;
+		const myMatch = str.match(matcher);
+		return [parseFloat(myMatch[1]), parseFloat(myMatch[2])];
+	},
     //lineFormatter takes two cartesian points and returns the slope and y-intercept
     //of the resulting line
     lineFormatter(point1, point2) {
@@ -132,6 +138,10 @@ const helpers = {
             return val === arr2[ind];
         });
     }
-}
+});
 
-console.log(ConvexHullPoints(["(2,2)", "(3,1)", "(2,6)", "(0,-2)"]));
+module.exports = {
+	ConvexHullPoints,
+	helpers,
+	info
+};
