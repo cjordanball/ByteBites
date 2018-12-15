@@ -23,8 +23,6 @@ const ConvexHullPoints = (strArr) => {
 
 	// find the leftmost point
 	const leftPoint = formattedArray.sort((val1, val2) => val1[0] - val2[0])[0];
-	console.log('FA: ', formattedArray);
-	console.log('lp: ', leftPoint);
 
     let triangles = helpers.getComboList(3, formattedArray.length)
         .map((val) => {
@@ -44,6 +42,25 @@ Object.assign(helpers, {
 		const matcher = /^\(([-+]?\d+),([-+]?\d+)\)$/;
 		const myMatch = str.match(matcher);
 		return [parseFloat(myMatch[1]), parseFloat(myMatch[2])];
+	},
+	// given three points, the middle being the point in common, getAngle returns
+	// the angle between the rays extending from the common point.
+	getAngle(point1, origin, point2) {
+		const [point1x, point1y] = point1;
+		const [originx, originy] = origin;
+		const [point2x, point2y] = point2;
+		const dotProduct = (
+			((point1x - originx) * (point2x - originx)) +
+			((point1y - originy) * (point2y - originy))
+		);
+		const line1Length = (((point1x - originx) ** 2) + ((point1y - originy) ** 2)) ** 0.5;
+		const line2Length = (((point2x - originx) ** 2) + ((point2y - originy) ** 2)) ** 0.5;
+
+		const radAngle = Math.acos(dotProduct / (line1Length * line2Length));
+		return Math.round((radAngle * 18000) / Math.PI) / 100;
+
+		console.log(originy, point2x);
+		return 89;
 	},
     //lineFormatter takes two cartesian points and returns the slope and y-intercept
     //of the resulting line
