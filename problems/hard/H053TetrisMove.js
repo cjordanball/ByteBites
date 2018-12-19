@@ -54,35 +54,30 @@ const TetrisMove = (strArr) => {
 		.map(val => parseInt(val, 10));
 	const shape = strArr[0].toUpperCase();
 	const minResult = Math.min(...modifiedArray);
+	const height = Math.max(...modifiedArray);
 	modifiedArray = modifiedArray.map(val => val - minResult);
-	const stringRep = modifiedArray.join('');
+	let stringRep = modifiedArray.join('');
+	for (let i = 0; i < height; i++) {
+		const res = helpers.evaluate(shape, stringRep);
+		if (res) {
+			return minResult + res;
+		}
+		modifiedArray = modifiedArray.map(val => Math.max(val - 1, 0));
+		stringRep = modifiedArray.join('');
+	}
+
 	return minResult + helpers.evaluate(shape, stringRep);
 };
 
 Object.assign(helpers, {
-	findUpperLimit(numArr) {
-		let counter = 0;
-		let checkNext = true;
-		while (checkNext) {
-			const resArray = [];
-			for (let i = 0; i < 12; i++) {
-				if (numArr[i] <= counter) {
-					resArray.push(i);
-				}
-			}
-			if ((Math.max(...resArray) - (Math.min(...resArray))) + 1 > resArray.length ||
-				resArray.length > 4) {
-				checkNext = false;
-				return counter;
-			}
-			counter++;
-		}
-		return null;
-	},
 	evaluate(shape, stringRep) {
+		const testPattern = /(0+)/g;
+		if (stringRep.match(testPattern).length > 1) {
+			return 0;
+		}
 		switch (shape) {
 			case 'O': {
-				const pattern = /00/;
+				const pattern = /(00)/;
 				const base = pattern.exec(stringRep) ? pattern.exec(stringRep)[1].length : null;
 				if (base !== 2) {
 					return 0;
@@ -121,7 +116,7 @@ Object.assign(helpers, {
 				break;
 			}
 			case 'L': {
-				const pattern = /(0+)/;
+				const pattern = /(0+)/g;
 				const base = pattern.exec(stringRep)[1].length;
 				if (base > 3) {
 					return 0;
@@ -136,6 +131,66 @@ Object.assign(helpers, {
 				const pattern3 = /(20)/;
 				if (pattern3.test(stringRep)) {
 					const newString = stringRep.replace('20', '33');
+					return Math.min(...(newString.split('')));
+				}
+				break;
+			}
+			case 'T': {
+				const pattern = /(0+)/;
+				const base = pattern.exec(stringRep)[1].length;
+				if (base > 3 || base === 2) {
+					return 0;
+				} else if (base === 3) {
+					return 1;
+				}
+				const pattern2 = /101/;
+				if (pattern2.test(stringRep)) {
+					const newString = stringRep.replace('101', '222');
+					return Math.min(...(newString.split('')));
+				}
+				const pattern3 = /(01)|(10)/;
+				if (pattern3.test(stringRep)) {
+					const newString = stringRep.replace(/01|10/, '22');
+					return Math.min(...(newString.split('')));
+				}
+				break;
+			}
+			case 'S': {
+				const pattern = /(0+)/;
+				const base = pattern.exec(stringRep)[1].length;
+				if (base > 2) {
+					return 0;
+				}
+				if (base === 2) {
+					const pattern2 = /001/;
+					if (pattern2.test(stringRep)) {
+						return 1;
+					}
+					return 0;
+				}
+				const pattern3 = /10/;
+				if (pattern3.test(stringRep)) {
+					const newString = stringRep.replace('10', '32');
+					return Math.min(...(newString.split('')));
+				}
+				break;
+			}
+			case 'Z': {
+				const pattern = /(0+)/;
+				const base = pattern.exec(stringRep)[1].length;
+				if (base > 2) {
+					return 0;
+				}
+				if (base === 2) {
+					const pattern2 = /100/;
+					if (pattern2.test(stringRep)) {
+						return 1;
+					}
+					return 0;
+				}
+				const pattern3 = /01/;
+				if (pattern3.test(stringRep)) {
+					const newString = stringRep.replace('01', '23');
 					return Math.min(...(newString.split('')));
 				}
 				break;
