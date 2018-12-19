@@ -56,9 +56,7 @@ const TetrisMove = (strArr) => {
 	const minResult = Math.min(...modifiedArray);
 	modifiedArray = modifiedArray.map(val => val - minResult);
 	const stringRep = modifiedArray.join('');
-	maxHeight = helpers.findUpperLimit(Array.from(modifiedArray));
-	return minResult + helpers.evaluate(shape);
-	return strArr;
+	return minResult + helpers.evaluate(shape, stringRep);
 };
 
 Object.assign(helpers, {
@@ -79,70 +77,73 @@ Object.assign(helpers, {
 			}
 			counter++;
 		}
+		return null;
 	},
 	evaluate(shape, stringRep) {
 		switch (shape) {
-			case 'O':
-				const patternO = /00/;
-				const baseO = patternO.exec(stringRep)[1] ? patternO.exec(stringRep)[1].length : null;
-				if (baseO !== 2) {
+			case 'O': {
+				const pattern = /00/;
+				const base = pattern.exec(stringRep) ? pattern.exec(stringRep)[1].length : null;
+				if (base !== 2) {
 					return 0;
 				}
-				const newStringO = stringRep.replace('00', '22');
-				return Math.min(...(newStringO.split('')));
-				break;
-			case 'I':
-				const patternI = /(0+)/;
-				console.log(patternI.exec(stringRep));
-				if (patternI.exec(stringRep)[1].length === 4) {
+				const newString = stringRep.replace('00', '22');
+				return Math.min(...(newString.split('')));
+			}
+			case 'I': {
+				const pattern = /(0+)/;
+				if (pattern.exec(stringRep)[1].length === 4) {
 					return 1;
-				} if (patternI.exec(stringRep)[1].length !== 1) {
+				} if (pattern.exec(stringRep)[1].length !== 1) {
 					return 0;
 				}
-				const newStringI = stringRep.replace('0', '4');
-				return Math.min(...(newStringI.split('')));
-				break;
-			case 'J':
-				const patternJ = /(0+)/;
-				const baseJ = patternJ.exec(stringRep)[1].length;
-				if (baseJ > 3) {
+				const newString = stringRep.replace('0', '4');
+				return Math.min(...(newString.split('')));
+			}
+			case 'J': {
+				const pattern = /(0+)/;
+				const base = pattern.exec(stringRep)[1].length;
+				if (base > 3) {
 					return 0;
-				} else if (baseJ > 1) {
+				} else if (base > 1) {
 					return 1;
 				}
-				const patternJ2 = /110/;
-				if (patternJ2.test(stringRep)) {
+				const pattern2 = /110/;
+				if (pattern2.test(stringRep)) {
 					const newString = stringRep.replace('110', '222');
 					return Math.min(...(newString.split('')));
 				}
-				const patternJ3 = /(02)/;
-				if (patternJ3.test(stringRep)) {
+				const pattern3 = /(02)/;
+				if (pattern3.test(stringRep)) {
 					const newString = stringRep.replace('02', '33');
 					return Math.min(...(newString.split('')));
 				}
 				break;
-			case 'L':
-				const patternL = /(0+)/;
-				const baseL = patternL.exec(stringRep)[1].length;
-				if (baseL > 3) {
+			}
+			case 'L': {
+				const pattern = /(0+)/;
+				const base = pattern.exec(stringRep)[1].length;
+				if (base > 3) {
 					return 0;
-				} else if (baseL > 1) {
+				} else if (base > 1) {
 					return 1;
 				}
-				const patternL2 = /011/;
-				if (patternL2.test(stringRep)) {
+				const pattern2 = /011/;
+				if (pattern2.test(stringRep)) {
 					const newString = stringRep.replace('011', '222');
 					return Math.min(...(newString.split('')));
 				}
-				const patternL3 = /(20)/;
-				if (patternL3.test(stringRep)) {
+				const pattern3 = /(20)/;
+				if (pattern3.test(stringRep)) {
 					const newString = stringRep.replace('20', '33');
 					return Math.min(...(newString.split('')));
 				}
 				break;
+			}
 			default:
 				return 0;
 		}
+		return null;
 	}
 });
 
