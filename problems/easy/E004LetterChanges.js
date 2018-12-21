@@ -37,9 +37,11 @@ helpers = {
 
 	// shifter() checks each char in the string and, if it is a letter, shifts it by
 	// one value (a -> b, b -> c, etc.).  The modulo function is used to shift z to a.
+	// Note that the modulo requires some adjustment, in order to make the letters a through
+	// z correspond to the numbers 0 through 25.
 	shifter(str) {
 		let newString = '';
-		for (let char of str) {
+		for (const char of str) {
 			newString += /[a-z]/.test(char) ? String.fromCharCode(((char.charCodeAt(0) - 18) % 26) + 97) : char;
 		}
 		return newString;
@@ -53,5 +55,6 @@ helpers = {
 
 module.exports = {
 	LetterChanges,
-	helpers
+	helpers,
+	info
 };
