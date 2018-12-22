@@ -13,56 +13,39 @@ the pattern your program should return the string false.
 */
 
 const info = {
-	name: 'TetrisMove',
+	name: 'WildcardCharacters',
 	number: 52,
 	level: 'hard',
 	methods: [],
 	concepts: []
 };
 
-const helpers = {};
+
 const WildcardCharacters = (str) => {
     // separate the parts
-	const strArr = str.split(' ');
-    // format the string into an array of number strings
-	const stringRep = helpers.adjustStringRep(strArr[0])
-        .split('')
-        .map(val => parseInt(val, 10));
-	const len = stringRep.length;
-    // split up the test string into an array
-	const subjectArr = strArr[1].split('');
-
-	const targetLength = stringRep
-		.reduce((val1, val2) => val1 + val2, 0);
-
-	if (targetLength !== subjectArr.length) {
-		return 'false';
-	}
-
-	let counter = 0;
-	for (let i = 0; i < len; i++) {
-		const mySlice = subjectArr.slice(counter, counter + stringRep[i]);
-		const allSame = mySlice.every(val => val === mySlice[0]);
-		if (!allSame) {
-			return 'false';
-		}
-		counter += stringRep[i];
-	}
-	return 'true';
+	let pattern = str.split(' ')[0];
+	const haystack = str.split(' ')[1];
+	pattern = `^${pattern}$`;
+	const length = pattern.match(/\*/g) ? pattern.match(/\*/g).length : 0;
+	const alphaSearch = '[a-zA-Z]';
+	const rep = '\\^';
+	let newPatternString = pattern.replace(/\+/g, alphaSearch)
+		.replace(/\*(?!\{)/g, '*{3}')
+		.replace(/\*\{(\d+)\}/g, (match, cap1) => {
+			const repValue = parseInt(cap1, 10) - 1;
+			return repValue ? `(${alphaSearch})${rep.repeat(repValue)}` : alphaSearch;
+		});
+	const fixPattern = /(\\\^)+/;
+	let count = 1;
+	do {
+		newPatternString = newPatternString.replace(fixPattern, (...args) => args[0].replace(/\^/g, count.toString()));
+		count++;
+	} while (count <= length);
+	const newPattern = new RegExp(newPatternString);
+	return newPattern.test(haystack).toString();
 };
-
-Object.assign(helpers, {
-    // take the string and convert the signs into the number of consecutive letters
-	adjustStringRep(str) {
-		return str
-            .replace(/\+/g, '1')
-            .replace(/\*(?!\{)/g, '3')
-			.replace(/\*\{(\d+)\}/g, '$1');
-	}
-});
 
 module.exports = {
 	WildcardCharacters,
-	helpers,
 	info
-}
+};
