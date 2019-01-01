@@ -31,131 +31,131 @@ const info = {
 
 const helpers = {};
 
-function TransitivityRelations(strArr) {
-    var len = strArr.length;
-    var paths = groupings(len, len);
-    var newArr = prepArr(strArr);
-    var mark1Arr = endMark(newArr, paths);
-    var mark2Arr = markUp(newArr, mark1Arr);
-    mark2Arr = mark2Arr.map(function(val) {
-        return val + val[0];
-    });
-    var tests = mark2Arr.filter(function(val) {
-        return /-d-/.test(val);
-    });
-    var searchResArray = [];
-    tests.forEach(function(val) {
-        var test3 = val.match(/d-d-d/g) || [];
-        console.log('3', test3);
-        var test4 = val.match(/d-d-d-d/g) || [];
-        console.log('4', test4);
-        var test5 = val.match(/d-d-d-d-d/g) || [];
-        console.log('5', test5);
-        searchResArray.push(...test3, ...test4, ...test5);
-    });
+const TransitivityRelations = (strArr) => {
+    // var len = strArr.length;
+    // var paths = groupings(len, len);
+    // var newArr = helpers.prepArr(strArr);
+    // var mark1Arr = helpers.endMark(newArr, paths);
+    // var mark2Arr = helpers.markUp(newArr, mark1Arr);
+    // mark2Arr = mark2Arr.map(function(val) {
+    //     return val + val[0];
+    // });
+    // var tests = mark2Arr.filter(function(val) {
+    //     return /-d-/.test(val);
+    // });
+    // var searchResArray = [];
+    // tests.forEach(function(val) {
+    //     var test3 = val.match(/d-d-d/g) || [];
+    //     console.log('3', test3);
+    //     var test4 = val.match(/d-d-d-d/g) || [];
+    //     console.log('4', test4);
+    //     var test5 = val.match(/d-d-d-d-d/g) || [];
+    //     console.log('5', test5);
+    //     searchResArray.push(...test3, ...test4, ...test5);
+    // });
+	//
+    // var res = [];
+    // searchResArray.forEach(function(val) {
+    //     var first = val.slice(0,1);
+    //     var second = val.slice(-1);
+    //     if (!parseInt(newArr[first][second], 10)) {
+    //         res.push('(' + first + ',' + second + ')');
+    //     }
+    // });
+    // if (!res.length) return 'transitive';
+	//
+	// res = helpers.uniq(res).sort();
+	//
+    // return res.join('-');
+	return true;
+};
 
-    var res = [];
-    searchResArray.forEach(function(val) {
-        var first = val.slice(0,1);
-        var second = val.slice(-1);
-        if (!parseInt(newArr[first][second], 10)) {
-            res.push('(' + first + ',' + second + ')');
-        }
-    });
-    if (!res.length) return 'transitive';
-
-    res = uniq(res).sort();
-
-    return res.join('-');
-
-}
+Object.assign(helpers, {
+	// prepArr take the original ["(1,1,1,1)"] form and converts it to [['1','1','1','1'], etc ] form
+	prepArr(arr) {
+		// convert the string array to an array of four arrays
+		return arr.map(val => val.match(/\d/g));
+	},
+	uniq(arr) {
+		return Array.from(new Set(arr));
+		// var obj = {};
+		// arr.forEach(function(val) {
+		// 	obj[val] = true;
+		// });
+		// return Object.keys(obj);
+	},
+	// puts an - at the end if the first element is connected to the last
+	// puts an * at the end if the first element is not connected to the last
+	endMark(newArr, paths) {
+		return paths.map((val) => {
+			const begin = val[0];
+			const end = val[val.length - 1];
+			if (parseInt(newArr[begin][end], 10)) {
+				return val.concat('-');
+			}
+			return val.concat('*');
+		});
+	},
+	// takes the 1/0 array and uses it to place hyphens between nodes with connections
+	markUp(arr, pathArr) {
+		const len = arr.length;
+		const copyArr = [];
+		pathArr.forEach((val, ind) => {
+			let str = pathArr[ind][0];
+			for (let i = 0; i < len - 1; i++) {
+				const begin = pathArr[ind][i];
+				const end = pathArr[ind][i + 1];
+				if (parseInt(arr[begin][end], 10)) {
+					str += `-${end}`;
+				} else {
+					str += `*${end}`;
+				}
+			}
+			copyArr.push(str);
+		});
+		return copyArr;
+	},
+	/*
+	this function finds all the distinct groupings of strLen objects out
+	an array n objects long.  It works a bit messily, taking the array of
+	all permutations of all array elements, chopping off the last unwanted
+	length - n objects, then taking every (length - n)! of that list.
+	*/
+	groupings(arrLen) {
+		const theArray = [];
+		for (let i = 0; i < arrLen; i++) {
+			theArray.push(i.toString());
+		}
+		const skipper = 1;
+		const newArr = this.permutations(theArray)
+			.map(val => val.slice(0, arrLen));
+		const holdArr = [];
+		newArr.forEach((val, ind) => {
+			if (ind % skipper === 0) {
+				holdArr.push(val);
+			}
+		});
+		return newArr;
+	},
+	factorial(num) {
+		const intNum = typeof num === 'number' ? Math.trunc(num) : parseInt(num, 10);
+		if (intNum < 0) return null;
+		if (intNum === 0) return 1;
+		if (num === 1) return 1;
+		return num * helpers.factorial(num - 1);
+	}
+});
 
 //---------------------Helper Functions---------------------------
 
-function uniq(arr) {
-    var obj = {};
-    arr.forEach(function(val) {
-        obj[val] = true;
-    });
-    return Object.keys(obj);
-}
 
-//take the original ["(1,1,1,1)"] form and conver to [['1','1','1','1'], etc ] form
-function prepArr(arr) {
-    //convert the string array to an array of four arrays
-    newInput = arr.map(function(val) {
-        nums = val.match(/d/g);
-        return nums;
-    });
-    return newInput;
-}
 
-//puts an - at the end if the first element is connected to the last
-//puts an * at the end if the first element is not connected to the last
-function endMark(newArr, paths) {
-    var arr = paths.map(function(val) {
-        var begin = val[0];
-        var end = val[val.length - 1];
-        if (parseInt(newArr[begin][end], 10)) {
-            return val.concat('-');
-        } else {
-            return val.concat('*');
-        }
-    });
 
-    return arr;
-}
 
-//takes the 1/0 array and uses it to place hyphens between nodes with connections
-function markUp(arr, pathArr) {
-    var len = arr.length;
-    var copyArr = [];
-    pathArr.forEach(function(val, ind) {
-        var str = pathArr[ind][0];
-        for (var i = 0; i < len - 1; i++) {
-            var begin = pathArr[ind][i];
-            console.log('begin', begin);
-            var end = pathArr[ind][i + 1];
-            console.log('end', end);
-            if (parseInt(arr[begin][end])) {
-                str += ('-' + end);
-            } else {
-                str += ('*' + end)
-            }
-        }
-        copyArr.push(str);
-    });
 
-    return copyArr;
 
-}
 
-/*this function finds all the distinct groupings of strLen objects out
-an array n objects long.  It works a bit messily, taking the array of
-all permutations of all array elements, chopping off the last unwanted
-length - n objects, then taking every (length - n)! of that list.
-*/
-function groupings(arrLen) {
-    var theArray = [];
-    for(var i = 0; i < arrLen; i++) {
-        theArray.push(i.toString());
-    }
 
-    var skipper = 1 //factorial(arrLen - arrLen);
-    var newArr = permutations(theArray);
-
-    newArr = newArr.map(function(val){
-        return val.slice(0, arrLen);
-    });
-    holdArr = [];
-    newArr.forEach(function(val, ind) {
-        if(ind % skipper === 0) {
-            holdArr.push(val);
-        }
-    });
-    return newArr;
-   // return holdArr;
-}
 
 //the permutations function delivers all the possible arrangements of n distinct letters.
 function permutations(arr) {
@@ -206,19 +206,7 @@ function reduction(arr) {
     }
 }
 
-function factorial(num) {
-    var intNum = parseInt(num, 10);
-    if (num < 0) return null;
-    if(num === 0) {
-        return 1;
-    }
-    else if(num === 1) {
-        return 1;
-    }
-    else {
-        return num * factorial(num - 1);
-    }
-}
+
 
 module.exports = {
 	TransitivityRelations,
