@@ -32,42 +32,31 @@ const info = {
 const helpers = {};
 
 const TransitivityRelations = (strArr) => {
-    // var len = strArr.length;
-    // var paths = groupings(len, len);
-    // var newArr = helpers.prepArr(strArr);
-    // var mark1Arr = helpers.endMark(newArr, paths);
-    // var mark2Arr = helpers.markUp(newArr, mark1Arr);
-    // mark2Arr = mark2Arr.map(function(val) {
-    //     return val + val[0];
-    // });
-    // var tests = mark2Arr.filter(function(val) {
-    //     return /-d-/.test(val);
-    // });
-    // var searchResArray = [];
-    // tests.forEach(function(val) {
-    //     var test3 = val.match(/d-d-d/g) || [];
-    //     console.log('3', test3);
-    //     var test4 = val.match(/d-d-d-d/g) || [];
-    //     console.log('4', test4);
-    //     var test5 = val.match(/d-d-d-d-d/g) || [];
-    //     console.log('5', test5);
-    //     searchResArray.push(...test3, ...test4, ...test5);
-    // });
-	//
-    // var res = [];
-    // searchResArray.forEach(function(val) {
-    //     var first = val.slice(0,1);
-    //     var second = val.slice(-1);
-    //     if (!parseInt(newArr[first][second], 10)) {
-    //         res.push('(' + first + ',' + second + ')');
-    //     }
-    // });
-    // if (!res.length) return 'transitive';
-	//
-	// res = helpers.uniq(res).sort();
-	//
-    // return res.join('-');
-	return true;
+	const len = strArr.length;
+	const paths = helpers.groupings(len, len);
+	const newArr = helpers.prepArr(strArr);
+	const mark1Arr = helpers.endMark(newArr, paths);
+	const mark2Arr = helpers.markUp(newArr, mark1Arr)
+		.map(val => val + val[0]);
+	const tests = mark2Arr.filter(val => /-\d-/.test(val));
+	const searchResArray = [];
+	tests.forEach((val) => {
+		const test3 = val.match(/\d-\d-\d/g) || [];
+		const test4 = val.match(/\d-\d-\d-\d/g) || [];
+		const test5 = val.match(/\d-\d-\d-\d-\d/g) || [];
+		searchResArray.push(...test3, ...test4, ...test5);
+	});
+	const res = [];
+	searchResArray.forEach((val) => {
+		const first = val.slice(0, 1);
+		const second = val.slice(-1);
+		if (!parseInt(newArr[first][second], 10)) {
+			res.push(`(${first},${second})`);
+		}
+	});
+	if (!res.length) return 'transitive';
+	helpers.uniq(res).sort();
+	return res.join('-');
 };
 
 Object.assign(helpers, {
@@ -143,70 +132,48 @@ Object.assign(helpers, {
 		if (intNum === 0) return 1;
 		if (num === 1) return 1;
 		return num * helpers.factorial(num - 1);
+	},
+	// the permutations function delivers all the possible arrangements of n distinct letters.
+	permutations(arr) {
+		// create an array of form ['str', [arr]]
+		const newArr = ['', arr];
+		return (this.reduction(this.rollover(newArr)));
+	},
+	/*
+	the rollover function takes an array in the form ['',[a, b, c, . . .]] and
+	returns a nested array containing all the permutations containing n items, using
+	each item only once.  However, to use, one must use the reduction()function to
+	get back to a single level array.
+	*/
+	rollover(arr) {
+		const arrCopy = Array.from(arr);
+		if (arrCopy[1].length === 1) {
+			arrCopy[0] += arrCopy[1];
+			return arrCopy[0];
+		}
+		const itemArr = arr[1];
+		const holdArr = [];
+		const len = itemArr.length;
+		for (let i = 0; i < len; i++) {
+			const forArr = itemArr.map(val => val);
+			forArr.splice(i, 1);
+			const cons = arr[0] + arr[1][i];
+			holdArr.push(helpers.rollover([cons, forArr]));
+		}
+		return holdArr;
+	},
+	/*
+	The reduction function takes an array nested several levels and flattens it by
+	concatenation.
+	*/
+	reduction(arr) {
+		if (Array.isArray(arr[0])) {
+			const holdArr = arr.reduce((first, last) => first.concat(last));
+			return helpers.reduction(holdArr);
+		}
+		return arr;
 	}
 });
-
-//---------------------Helper Functions---------------------------
-
-
-
-
-
-
-
-
-
-
-//the permutations function delivers all the possible arrangements of n distinct letters.
-function permutations(arr) {
-
-    //create an array of form ['str', [arr]]
-    var newArr = ['', arr];
-
-    return (reduction(rollover(newArr)));
-}
-    /*the rollover function takes an array in the form ['',[a, b, c, . . .]] and
-    returns a nested array containing all the permutations containing n items, using
-    each item only once.  However, to use, one must use the reduction()function to
-    get back to a single level array.
-    */
-function rollover (arr) {
-    if (arr[1].length === 1) {
-        arr[0] += arr[1];
-        return arr[0];
-    }
-    else {
-        var itemArr = arr[1];
-        var holdArr = [];
-        var len = itemArr.length;
-        for (var i = 0; i < len; i++) {
-            forArr = itemArr.map(function(val) {
-                return val;
-            });
-            forArr.splice(i, 1);
-            var cons = arr[0] + arr[1][i];
-            holdArr.push(rollover([cons,forArr]));
-        };
-        return holdArr;
-    }
-}
-/*
-The reduction function takes an array nested several levels and flattens it by
-concatenation.
-*/
-function reduction(arr) {
-    if (Array.isArray(arr[0])) {
-        var holdArr = arr.reduce(function(first, last) {
-            return first.concat(last);
-        });
-        return reduction(holdArr);
-    }
-    else {
-        return arr;
-    }
-}
-
-
 
 module.exports = {
 	TransitivityRelations,
