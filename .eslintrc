@@ -15,7 +15,8 @@
         "no-use-before-define": ["error", { "functions": false }],
         "no-confusing-arrow": ["off", {"allowParens": true}],
         "no-continue": "off",
-        "arrow-body-style": ["error", "as-needed"]
+        "arrow-body-style": ["error", "as-needed"],
+        "max-len": ["error", {"code": 150}]
     },
     "globals": {
         "document": false,
