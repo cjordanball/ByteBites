@@ -16,7 +16,8 @@
         "no-confusing-arrow": ["off", {"allowParens": true}],
         "no-continue": "off",
         "arrow-body-style": ["error", "as-needed"],
-        "max-len": ["error", {"code": 150}]
+        "max-len": ["error", {"code": 150}],
+        "no-eval": ["error", {"allowIndirect": true}]
     },
     "globals": {
         "document": false,
