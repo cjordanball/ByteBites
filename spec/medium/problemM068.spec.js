@@ -4,9 +4,6 @@ describe('createFullArray', () => {
 	it('returns the correct value for miss 1', () => {
 		expect(createFullArray(['5', '2', '6', '1', '9', '#', '8', '#', '#', '#', '#', '4', '#'])).toEqual(['5', '2', '6', '1', '9', '#', '8', '#', '#', '#', '#', '#', '#', '4', '#']);
 	});
-	xit('returns the correct value for a right side array', () => {
-		expect(createFullArray(['5', '#', '6', '#', '8', '4', '#'])).toEqual(['5', '#', '6', '#', '#', '#', '8', '#', '#', '#', '#', '#', '#', '4', '#']);
-	});
 });
 
 describe('orderArray', () => {
