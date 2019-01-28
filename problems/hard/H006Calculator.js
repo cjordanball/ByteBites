@@ -21,7 +21,7 @@ const info = {
 const Calculator = (str) => {
 	const newStr = str.replace(/([\d)])\(/g, '$1*(')
 		.replace(/\)([(\d])/g, ')*$1')
-		.replace(/\*\*/g, '*');
+		.replace(/\*\*/g, '*');cd
 	return global.eval(newStr);
 };
 
