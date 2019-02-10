@@ -3,11 +3,13 @@ Create a function, FirstReverse(str), that takes a string parameter ('str') bein
 returns the string in reversed order.
 */
 
-const name = 'FirstReverse';
-const number = 1;
-const level = 'easy';
-const methods = [];
-const concepts = ['for-loop', 'length of string', 'const', '+= operator', 'if statements', 'typeof'];
+const info = {
+	name: 'FirstReverse',
+	number: 1,
+	level: 'easy',
+	methods: [],
+	concepts: ['for-loop', 'length of string', 'const', '+= operator', 'if statements', 'typeof']
+};
 
 const FirstReverse = (str = '') => {
 	if (typeof str !== 'string') {
@@ -32,6 +34,6 @@ const FirstReverse = (str = '') => {
 };
 
 module.exports = {
-	FirstReverse
+	FirstReverse,
+	info
 };
-
