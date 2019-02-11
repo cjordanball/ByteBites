@@ -10,7 +10,6 @@ import "fmt"
 
 // FirstFactorial is a function
 func FirstFactorial(num int) int {
-
 	resInt := 1
 	if num == 0 {
 		return resInt
